@@ -3,17 +3,18 @@
 #endif // _MSC_VER
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // 시스템 헤더 파일
 
 int main()
 {
-	printf("Be happy\n");					// "Be happy" 출력, 줄을바꿈(\n)
-	printf("12345678901234567890\n");		// "12345678901234567890" 출력, 줄을바꿈(\n)
-	printf("My\tfriend\n");					// "My" + (\t) 탭 위치로 이동 + "friend" 출력후 줄을바꿈(\n)
+	printf("%d\n", 10);
+	printf("%lf\n", 3.4);
+	printf("%.1lf\n", 3.45);	//소수점 첫번째자리까지만 출력
+	printf("%.10lf\n", 3.4);
+	
+	printf("%d과 %d의 합은 %d입니다.\n", 10, 20, 10 + 20);
 
-	printf("Goot\bd\tchance\n");			// "Goot" 출력후 + 한칸전인 t위치로 커서이동(\b) + 그후 탭위치로 이동(\t)
-											// + "chance" 출력후 줄을바꿈(\n)
-	printf("Cow\rW\a\n");					// 맨 앞으로 이동(\r) 이동해서 C를 W로 변경, 벨소리(\a)후 줄을바꿈(\n) 
+	printf("%.1lf-%.1lf = %.1lf\n", 3.4, 1.2, 3.4 - 1.2);
 
 	// type here
 
