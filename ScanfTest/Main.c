@@ -12,11 +12,11 @@ int main()
 
 	// printf("나이 : %d, 키 : %lf", age, height);
 	
-	printf("학점을 입력하세요 :");
+	printf("학점을 입력하세요 : ");
 	scanf("%c", &grade);
 	printf("이름을 입력하세요 :");
 	scanf("%s", name);
-	printf("학점은 %c, 이름은 %c입니다.", grade, name);
+	printf("학점은 %c, 이름은 %s입니다.", grade, name);
 	
 	system("pause");
 	return 0;
