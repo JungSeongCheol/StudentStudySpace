@@ -29,7 +29,7 @@ int main(void)
     ggg = ".txt";
     FILE* fp;
     char buffer[100];
-    char* tp;
+    char* tp = "d:\\";
     char* local = "b";
     char ch;
     struct dirent* a;
@@ -52,14 +52,13 @@ int main(void)
                 if (i == 0)
                 {
                     printf("%s\n", dir->d_name);
-
+                    strcat(tp, dir->d_name);
+                    FILE* fp = fopen(dir->d_name, "rt");
+                    ch = fgetc(fp);
+                    if (ch == EOF)
+                        break;
+                    putchar(ch);
                 }
-                FILE* fp = fopen("test.txt", "rt");
-                ch = fgetc(fp);
-                if (ch == EOF)
-                    break;
-                putchar(ch);
-
             }
         }
         if (_kbhit());
