@@ -6,27 +6,28 @@
   first created - 2020.02.01
   writer - Hugo MG Sung.
 */
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <io.h>
 
+int factorial(int count);
 
-typedef struct _finddata_t FILE_SEARCH;
-
-void GetfileList(char* path);
-
-// 메인함수
 int main(void)
 {
-    char path[100] = "D:\\";
-    GetfileList(path);
+    int a;
+    printf("factorial 숫자를 입력하세요 : ");
+    scanf("%d", &a);
+    int result = factorial(a);
+    printf("result = %d\n", result);
 
     system("pause");
     return EXIT_SUCCESS;
 }
 
-void GetfileList(char* path)
+int factorial(int count)
 {
-    long h_file;
-    char search_Path[100];
+    if (count == 1)
+        return 1;
+
+    return count * factorial(count - 1);
 }
