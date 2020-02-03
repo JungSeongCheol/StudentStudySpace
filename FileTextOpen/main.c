@@ -1,32 +1,29 @@
-/*
-  filename - main.c
-  version - 1.0
-  description - 기본 메인 함수
-  --------------------------------------------------------------------------------
-  first created - 2020.02.01
-  writer - Hugo MG Sung.
-*/
-
+#include <dirent.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <conio.h>
 
-
-// 메인함수
-int main(void) 
+int main(void)
 {
-    FILE *fp;
+    DIR* d;
+    struct dirent* dir;
+    d = opendir("d:\\");
 
-    fp = fopen("d:\\a.txt", "r");
-
-    if (fp == NULL)
+    while (1)
     {
-        printf("파일이 열리지 않았습니다.\n");
-        return 1;
+        if (d)
+        {
+            while ((dir = readdir(d)) != NULL)
+            {
+                printf("%s\n", dir->d_name);
+            }
+        }
+
+        if (_kbhit());
+        {
+            if (_getch() == 'x')
+                break;
+        }
     }
-
-    printf("파일이 열렸습니다.\n");
-    fclose(fp);
-
-	system("pause");
-	return EXIT_SUCCESS;
+    closedir(d);
+    return(0);
 }
