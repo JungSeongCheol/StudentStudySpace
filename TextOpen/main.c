@@ -17,24 +17,27 @@
 
 typedef struct _finddata_t FILE_SEARCH;
 
+
 int main(void)
 {
-    DIR* d;
-    struct dirent* dir;
-
-    d = opendir("d:\\");
-    char* ext;
-    int i;
-    char* ggg;
-    ggg = ".txt";
-    FILE* fp;
-    char buffer[300];
-    char* local = "b";
-    int ch;
-    char* dp;
 
     while (1)
     {
+        one:
+        printf("");
+        struct dirent* dir;
+        DIR* d;
+        d = opendir("d:\\");
+        char* ext;
+        int i;
+        char* ggg;
+        ggg = ".txt";
+        FILE* fp;
+        char* local = "b";
+        int ch;
+        char* dp;
+
+
         if (d)
         {
             while ((dir = readdir(d)) != NULL)
@@ -78,11 +81,16 @@ int main(void)
                 dir = readdir(d);
             }
         }
+
+        Sleep(1000);
+        system("cls");
+
         if (_kbhit());
         {
             if (_getch() == 'x')
                 break;
         }
+        goto one;
 
     }
     return(0);
