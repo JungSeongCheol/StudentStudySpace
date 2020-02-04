@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <dirent.h>
+#include <dirent.h> // 따로 다운로드 필요(window dirent 검색)
 #include <string.h>
 #include <time.h>
 #include <io.h>
@@ -19,20 +19,19 @@ typedef struct _finddata_t FILE_SEARCH;
 
 int main(void)
 {
-    FILE_SEARCH t_file;
     DIR* d;
     struct dirent* dir;
+
     d = opendir("d:\\");
     char* ext;
     int i;
     char* ggg;
     ggg = ".txt";
     FILE* fp;
-    char buffer[100];
-    char* tp = "d:\\";
+    char buffer[300];
     char* local = "b";
-    char ch;
-    struct dirent* a;
+    int ch;
+    char* dp;
 
     while (1)
     {
@@ -51,14 +50,32 @@ int main(void)
 
                 if (i == 0)
                 {
-                    printf("%s\n", dir->d_name);
+                    char tp[100] = "d:\\";
                     strcat(tp, dir->d_name);
-                    FILE* fp = fopen(dir->d_name, "rt");
-                    ch = fgetc(fp);
-                    if (ch == EOF)
-                        break;
-                    putchar(ch);
+
+                    fp = fopen(tp, "r");
+
+                    if (fp == NULL)
+                    {
+                        printf("파일이 열리지 않았습니다.");
+                        return 1;
+                    }
+
+                    while (1)
+                    {
+                        ch = fgetc(fp);
+
+                        if (ch == EOF)
+                        {
+                            break;
+                        }
+                        putchar(ch);
+
+                    }
+                    putchar('\n');
+                    fclose(fp);
                 }
+                dir = readdir(d);
             }
         }
         if (_kbhit());
@@ -66,7 +83,7 @@ int main(void)
             if (_getch() == 'x')
                 break;
         }
+
     }
-    closedir(d);
     return(0);
 }
