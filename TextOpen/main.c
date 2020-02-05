@@ -9,22 +9,22 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <dirent.h> // 따로 다운로드 필요(window dirent 검색)
+#include "dirent.h" // 따로 다운로드 필요(window dirent 검색)
 #include <string.h>
 #include <time.h>
 #include <io.h>
 #include <conio.h>
 
-typedef struct _finddata_t FILE_SEARCH;
-
-
 int main(void)
 {
+    printf("엔터를 입력하면 텍스트 파일이 보입니다.\n");
+    printf("x를 입력하면 콘솔이 꺼집니다.\n");
+
 
     while (1)
     {
-        one:
-        printf("");
+        gofirst:
+        getchar();
         struct dirent* dir;
         DIR* d;
         d = opendir("d:\\");
@@ -33,15 +33,19 @@ int main(void)
         char* ggg;
         ggg = ".txt";
         FILE* fp;
-        char* local = "b";
         int ch;
-        char* dp;
 
+        if (_kbhit());
+        {
+            if (_getch() == 'x')
+                break;
+        }
 
         if (d)
         {
             while ((dir = readdir(d)) != NULL)
             {
+
                 ext = strrchr(dir->d_name, '.');
 
                 if (ext == NULL)
@@ -77,6 +81,7 @@ int main(void)
                     }
                     putchar('\n');
                     fclose(fp);
+
                 }
                 dir = readdir(d);
             }
@@ -84,14 +89,23 @@ int main(void)
 
         Sleep(1000);
         system("cls");
-
+        printf("엔터를 입력하면 텍스트 파일이 보입니다.\n");
+        printf("x를 입력하면 콘솔이 꺼집니다.\n");
         if (_kbhit());
         {
             if (_getch() == 'x')
                 break;
         }
-        goto one;
+
+        goto gofirst;
 
     }
     return(0);
 }
+/*
+if (_kbhit());
+{
+    if (_getch() == 'x')
+        break;
+}
+*/
