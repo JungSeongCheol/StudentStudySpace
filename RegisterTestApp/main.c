@@ -9,18 +9,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
-
 // 메인함수
 int main(void) 
 {
-    OSVERSIONINFOEX info;
-    ZeroMemory(&info, sizeof(OSVERSIONINFOEX));
-    info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+    register int i;
+    auto int sum = 0;
 
-    GetVersionEx(&info);
+    for (i = 1; i <= 10000; i++)
+    {
+        sum += i;
+    }
 
-    printf("Windows version: %u.%u\n", info.dwMajorVersion, info.dwMinorVersion);
+    printf("%d\n", sum);
 
+    // type here.
+	system("pause");
 	return EXIT_SUCCESS;
 }

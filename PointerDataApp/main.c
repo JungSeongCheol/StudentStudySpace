@@ -9,18 +9,26 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
+
+int *sum(int a, int b);
 
 // 메인함수
 int main(void) 
 {
-    OSVERSIONINFOEX info;
-    ZeroMemory(&info, sizeof(OSVERSIONINFOEX));
-    info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+    int* resp;
 
-    GetVersionEx(&info);
-
-    printf("Windows version: %u.%u\n", info.dwMajorVersion, info.dwMinorVersion);
-
+    resp = sum(10, 20);
+	printf("두 정수의 합 : %d\n", *resp);
+    // type here.
+	system("pause");
 	return EXIT_SUCCESS;
+}
+
+int *sum(int a, int b)
+{
+    static int res;
+    
+    res = a + b;
+
+    return &res;
 }
