@@ -81,6 +81,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WhileStrTest", "WhileStrTes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SystemInfoTestApp", "SystemInfoTestApp\SystemInfoTestApp.vcxproj", "{C1AE6AF3-A3E3-47EB-82CA-EE227AA54D00}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CH13", "CH13", "{495A6265-47F1-44EC-AE9E-7390FB4102CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
