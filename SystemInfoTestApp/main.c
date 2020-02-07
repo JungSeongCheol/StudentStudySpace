@@ -5,10 +5,18 @@
 #include <VersionHelpers.h>
 
 #pragma comment(lib, "netapi32.lib")
+#define BUFFER 8192
 
 int main(void)
 {
-    char buffer[MAX_COMPUTERNAME_LENGTH + 10];
+
+    char value[255];
+    DWORD BufferSize = BUFFER;
+
+    RegGetValue(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", "SystemRoot", RRF_RT_ANY, NULL, (PVOID)&value, &BufferSize);
+
+    char buffer[MAX_COMPUTERNAME_LENGTH + 1];
+    char buffer1[1000];
     DWORD size = 55;
     if (GetComputerName(buffer, &size))
     {
@@ -17,13 +25,15 @@ int main(void)
 
     buffer[1000];
 
-    if (GetUserName(buffer, &size))
+    if (GetUserName(buffer1, &size))
     {
-        printf("시스템 이름 : %s\n", buffer);
+        printf("사용자 이름 : %s\n", buffer1);
     }
 
-    printf("OS이름 : ");
+    printf(" OS 이름 : ");
     VersionCheck();
+
+
 }
 
 int VersionCheck()
@@ -83,3 +93,17 @@ int VersionCheck()
         printf("Windows 10 Pro");
     }
 }
+//
+////RegistryKey reg = Registry.LocalMachine;
+////reg = reg.OpenSubKey("Software\\GeoService\\GeoService-Xr", true);
+////
+////if (reg != null)
+////{
+////    Object val = reg.GetValue("INSTALL_PATH");
+////    if (null != val)
+////    {
+////        MessageBox.Show(Convert.ToString(val));
+////    }
+////}
+//
+//#define BUFFER 8192
