@@ -23,9 +23,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{2f6eb1f6-c5ac-49bf-bb8f-1da3c0a0aa66}</ProjectGuid>
+    <ProjectGuid>{ada27ba5-6728-4a34-b813-26db0a21ceca}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>FileOpen</RootNamespace>
+    <RootNamespace>DynamicMemApp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
