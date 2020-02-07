@@ -14,25 +14,39 @@
 int main(void) 
 {
     int* pi;
-    double* pd;
+    int size = 5;
+    int count = 0;
+    int num = 0;
 
-    pi = (int*)malloc(sizeof(int));
+    pi = (int *)calloc(size, sizeof(int));
 
-    if (pi == NULL)
+    while (1)
     {
-        printf("# 메모리가 부족합니다.\n");
+        printf("양수만 입력하세요 ==> ");
+        scanf("%d", &num);
+
+        if (num <= 0)
+        {
+            break;
+        }
+
+        if (count == size)
+        {
+            size += 5;
+            pi = realloc(pi, size * sizeof(int));
+        }
+        pi[count++] = num;
     }
-    pd = (double*)malloc(sizeof(double));
 
-    *pi = 10;
-    *pd = 3.4;
-
-    printf("정수형으로 사용 : %d\n", *pi);
-    printf("실수형으로 사용 : %.1lf\n", *pd);
-
+    for (int i = 0; i < count; i++)
+    {
+        printf("%d ", pi[i]);
+    }
     free(pi);
-    free(pd);
+
+
 
 	system("pause");
 	return EXIT_SUCCESS;
+
 }

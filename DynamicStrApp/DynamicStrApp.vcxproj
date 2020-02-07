@@ -23,9 +23,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{558810a2-65bb-4af2-905e-7fa4cd11d180}</ProjectGuid>
+    <ProjectGuid>{200eba41-ad26-45ed-815e-0ad43f43f1d4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>FileTextOpen</RootNamespace>
+    <RootNamespace>DynamicStrApp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
