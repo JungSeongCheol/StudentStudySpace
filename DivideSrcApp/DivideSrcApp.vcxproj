@@ -20,15 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="sub.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\PKNU\Downloads\dirent-1.13\include\dirent.h" />
+    <ClInclude Include="sub.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{c1ae6af3-a3e3-47eb-82ca-ee227aa54d00}</ProjectGuid>
+    <ProjectGuid>{185eee80-b949-41f3-b711-7a11368ec39c}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SystemInfoTestApp</RootNamespace>
+    <RootNamespace>DivideSrcApp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
