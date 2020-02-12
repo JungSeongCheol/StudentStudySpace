@@ -20,6 +20,7 @@
 #define MYSQLPASSWORD "mysql_p@ssw0rd"
 #define MYSQLIP "localhost"
 #define USEMYSQLDB "use shopdb;"
+
 void loadmysql(char mysqlip[], MYSQL* cons); // 함수선언 필요
 
 // 메인함수
