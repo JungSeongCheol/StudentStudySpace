@@ -39,7 +39,7 @@ typedef struct card
 Card input_business_card(Card* list);
 void show_all_cards(Card* list);
 void search_business_card(Card* list, int number);
-Card edit_business_card(Card* list);
+void edit_business_card(Card* list);
 
 int main(void) 
 {
@@ -110,7 +110,7 @@ void search_business_card(Card* list, int number)
     printf("%d번 카드 %10d%10s%10s%10s\n", list[number].num, list[number].num, list[number].name, list[number].phone, list[number].email);
 }
 
-Card edit_business_card(Card* list)
+void edit_business_card(Card* list)
 {
     int find;
     printf("찾을 번호를 입력하세요 : ");
