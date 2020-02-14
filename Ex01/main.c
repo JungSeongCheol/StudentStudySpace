@@ -36,18 +36,17 @@ typedef struct card
 } Card;
 // 메인함수
 
-Card input_business_card(Card* list);
-void show_all_cards(Card* list);
-void search_business_card(Card* list, int number);
-Card* edit_business_card(Card* list);
+Card input_business_card();
+void show_all_cards();
+void search_business_card(int number);
+Card* edit_business_card();
+
+Card list[50] = { NULL };
 
 int main(void) 
 {
     int a;
     int number;
-
-    Card list[50] = { NULL };
-
 
     while (1)
     {
@@ -57,7 +56,7 @@ int main(void)
         switch (a)
         {
         case 1:
-            list[list->num] = input_business_card(list);
+            list[list->num] = input_business_card();
             break;
         case 2:
             edit_business_card(list);
@@ -70,7 +69,7 @@ int main(void)
         case 5:
             printf("찾을 명함번호를 입력하세요 : ");
             scanf("%d", &number);
-            search_business_card(list, number);
+            search_business_card(number);
             break;
         case 6:
             break;
@@ -84,7 +83,7 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-Card input_business_card(Card* list)
+Card input_business_card()
 {
     printf("한글 이름을 입력하세요 : ");
     scanf("%s", &(list->name));
@@ -97,7 +96,7 @@ Card input_business_card(Card* list)
     return* list;
 }
 
-void show_all_cards(Card* list)
+void show_all_cards()
 {
     for (int i = 1; i <= list->num; i++)
     {
@@ -105,12 +104,12 @@ void show_all_cards(Card* list)
     }
 }
 
-void search_business_card(Card* list, int number)
+void search_business_card(int number)
 {
     printf("%d번 카드 %10d%10s%10s%10s\n", list[number].num, list[number].num, list[number].name, list[number].phone, list[number].email);
 }
 
-Card* edit_business_card(Card* list)
+Card* edit_business_card()
 {
     int find;
     printf("찾을 번호를 입력하세요 : ");
