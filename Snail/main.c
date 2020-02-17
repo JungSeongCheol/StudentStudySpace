@@ -22,18 +22,17 @@ int main(void)
     {
         for (int j = 0; j < a; j++)
         {
-            //if (i == a - 1)
-            //{
-            //    n[i][j] = (a-1)*3 - j;
-            //}
+            n[i][j] = i + j + 1;
 
-            //else
+            if (i == a-1)
             {
-                n[i][j] = i + j + 1;
-                printf("%d\t", n[i][j]);
+                n[i][j] = 3 * i - j + 1;
             }
 
+            printf("%d\t", n[i][j]);
         }
+
+
         printf("\n");
 
     }
