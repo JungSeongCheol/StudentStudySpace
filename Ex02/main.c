@@ -90,7 +90,7 @@ int main(void)
         fputs("이메일 : ", ofp);
         fputs(list[i].email, ofp);
         fputs("\n", ofp);
-    }
+    } //저장완료
 
     fclose(ofp);
     fclose(ifp);
