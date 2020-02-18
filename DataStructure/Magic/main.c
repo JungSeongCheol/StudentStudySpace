@@ -17,36 +17,42 @@ int main(void)
 {
     int magic[10][10] = { 0 };
     int num = 0;
-
     scanf("%d", &num);
-
-    int C = 0, R = (num-1) / 2;
-
-    for (int i = 1; i <= (num*num); i++)
+    int C = 0, R = num / 2;
+    if ( (num  % 2)  == 0)
     {
-        magic[C][R] = i; //1의 위치 지정
-
-        if (i % num == 0)
-        {
-            C++;
-        }
-
-        if (C < 0)
-        {
-            C = (num-1);
-        }
-
-        if (R > num)
-        {
-            R = 0;
-        }
-
-        C--;
-        R++;
-
+        printf("홀수를 눌러주세요");
     }
 
-    Draw(magic, num);
+    else
+    {
+        for (int i = 1; i <= (num * num); i++)
+        {
+            magic[C][R] = i; //1의 위치 지정
+
+            if (i % num == 0)
+            {
+                C++;
+            }
+            else
+            {
+                --C;
+                ++R;
+            }
+            
+            if (C < 0)
+            {
+                C = (num - 1);
+            }
+
+            if (R > (num-1))
+            {
+                R = 0;
+            }
+
+        }
+        Draw(magic, num);
+    }
 
 	system("pause");
 	return EXIT_SUCCESS;
