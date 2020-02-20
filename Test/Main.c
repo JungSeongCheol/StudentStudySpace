@@ -1,55 +1,42 @@
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif if // _MSC_VER
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(void)
 {
-    int person;
-    int rank = 1;
-    int temp;
-    printf("사람의 수 : ");
-    scanf("%d", &person);
+	int Snail[20][20];
+	int max = 0;
+	int d = 1;
+	int x = -1;
+	int y = 0;
+	int count = 1;
+	int jmax;
 
-    int* num = (int*)malloc(sizeof(int) * person);
-    printf("\n");
-    printf("점수를 입력 하세요 =>\n");
-    for (int i = 0; i < person; i++)
-    {
-        scanf("%d", &num[i]);
-    }
-    printf("\n");
-    for (int i = 0; i < person; i++)
-    {
+	scnaf("%d", &max);
+	jmax = max;
+	
+	while (0 <= max)
+	{
+		for (int i = 0; i < max; i++)
+		{
+			x = x + d;
+			Snail[y][x] = count;
+			count;
+		}
+		max--;
 
-        for (int j = i + 1; j < person; j++)
-        {
-            if (num[i] < num[j])
-            {
-                temp = num[i];
-                num[i] = num[j];
-                num[j] = temp;
-            }
-        }
+		for (int i = 0; i < max; i++)
+		{
+			Snail[y][x] = count;
+		}
+	}
 
+	for (int i = 0; i < jmax; i++)
+	{
+		for (int j = 0; j < jmax; j++)
+		{
+			printf("%d\t", Snail[i][j]);
+		}
+	}
 
-    }
-
-    for (int i = 0; i < person; i++)
-    {
-        if (num[i] == num[i - 1])
-        {
-            rank--;
-        }
-
-
-        printf("%d%5d\n", num[i], rank++);
-
-    }
-    free(num);
-
-
-    return 0;
 }
