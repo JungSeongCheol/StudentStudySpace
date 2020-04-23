@@ -18,13 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Debug\InfoHide.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3DAFD102-C571-4B5C-B935-D8CBF48EEF6A}</ProjectGuid>
-    <RootNamespace>Chap03App</RootNamespace>
+    <ProjectGuid>{31C01059-9CCD-48F9-B5CB-3B19D63CB7CA}</ProjectGuid>
+    <RootNamespace>Chap04App</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -140,6 +137,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="cursor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ReadOnlyInit.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
