@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{2D83C095-4ECB-4DEC-A71F-5B0F6A1D512B}</ProjectGuid>
-    <RootNamespace>Chap07again</RootNamespace>
+    <ProjectGuid>{8EB2809D-95AE-407C-8AEE-7974C28E2DD7}</ProjectGuid>
+    <RootNamespace>Chap08App</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,9 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cursor.h" />
+    <ClInclude Include="PosValue.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GraphicObject.cpp" />
+    <ClCompile Include="SwapFunc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
