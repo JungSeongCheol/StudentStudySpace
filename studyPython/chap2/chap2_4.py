@@ -9,6 +9,7 @@
 output_a = "{:10d}".format(-30)
 output_b = "{:+010.4f}".format(3.141592)
 Pi = 3.141592
+
 output_c = "{:g}".format(52.00000000)
 
 input_s = "Hello Python Programming!!"
