@@ -69,21 +69,16 @@ def fibonacci(n):
 # print("실행시간 : ", time.time() - start, "sec")
 # print("dict size {}".format(len(dictionary)))
 
-def faltten(data) :
+def flatten(data):
     output = []
-    # for i in data:
-    #     if ((type(i) == list) == 1):
-    #         output = i
-    for i in data:
-        if ((i == data[0]) == 1):
-            output = i
+    for item in data:
+        if(type(item)==list):
+            output += flatten(item)
         else:
-            if ((type(i) == list) == 1):
-                output = output + i
-
-
+            output.append(item)
     return output
-        
-example = [[1,2,3], [4,[5,6]], 7, [8,9]]
-print("원본 : ", example)
-print("변환 : ", faltten(example))
+
+
+example = [[1, 2, 3,], [4, [5, 6]], 7 ,[8 ,9]]
+print("원본:", example)
+print("변환:", flatten(example))
