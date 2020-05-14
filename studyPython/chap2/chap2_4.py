@@ -24,8 +24,13 @@ print(input_s.upper())
 print(input_s.lower())
 print(input_t.strip())
 
-a = input("> 1번째 숫자 : ")
-b = input("> 2번째 문자 : ")
-print()
+# a = input("> 1번째 숫자 : ")
+# b = input("> 2번째 문자 : ")
+# print()
 
-print("{} + {} = {}".format(a, 100, b, 200, 100+200))
+numbers = [273, 103, 5, 32, 65, 9, 72, 800, 99]
+
+for number in numbers:
+    if number> 100:
+        print("- 100 이상의 수:", number)
+

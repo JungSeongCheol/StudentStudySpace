@@ -45,9 +45,30 @@ def multi_all(start, end):
 value = None
 # print("value 는 {}".format(value))
 
-if (value == None):
-    print("value는 값이 없습니다")
-else:
-    print("value 는 {}".format(value))
+# if (value == None):
+#     print("value는 값이 없습니다")
+# else:
+#     print("value 는 {}".format(value))
 
-print("1 to 100", multi_all(1, 100))
+# print("1 to 100", multi_all(1, 100))
+
+# def mul(*valueS):
+#     output = 1
+#     for value in valueS:
+#         output = output * value
+#     return output
+
+    
+# print(mul(5, 7, 9, 10))
+
+# def function(*valueS, valueA, valueB):
+#     pass
+# function(1, 2, 3, 4, 5)
+
+# def function(*valueS, valueA = 10, valueB = 20):
+#     pass
+# function(1, 2, 3, 4, 5)
+
+# def function(valueA, valueB, *valueS):
+#     pass
+# function(1, 2, 3, 4, 5)

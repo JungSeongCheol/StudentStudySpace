@@ -63,8 +63,27 @@ def fibonacci(n):
 # print("fibonacci(4):", fibonacci(4))
 # print("fibonacci(5):", fibonacci(5))
 
-print("fibonnaci(1)", fibonacci(1))
-start = time.time()
-print("fibonnaci(1000)", fibonacci(1000) )
-print("실행시간 : ", time.time() - start, "sec")
-print("dict size {}".format(len(dictionary)))
+# print("fibonnaci(1)", fibonacci(1))
+# start = time.time()
+# print("fibonnaci(1000)", fibonacci(1000) )
+# print("실행시간 : ", time.time() - start, "sec")
+# print("dict size {}".format(len(dictionary)))
+
+def faltten(data) :
+    output = []
+    # for i in data:
+    #     if ((type(i) == list) == 1):
+    #         output = i
+    for i in data:
+        if ((i == data[0]) == 1):
+            output = i
+        else:
+            if ((type(i) == list) == 1):
+                output = output + i
+
+
+    return output
+        
+example = [[1,2,3], [4,[5,6]], 7, [8,9]]
+print("원본 : ", example)
+print("변환 : ", faltten(example))

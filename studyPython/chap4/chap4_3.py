@@ -25,10 +25,30 @@
 #         print("반복 종료")
 #         break
 
-numbers = [5, 15, 6, 60, 7, 25]
+# numbers = [5, 15, 6, 60, 7, 25]
 
-for num in numbers:
-    if num < 10:
-        continue
+# for num in numbers:
+#     if num < 10:
+#         continue
 
-    print(num)
+#     print(num)
+
+
+# key_list = ["name", "hp", "mp", "level"]
+# value_list = ["기사",  200, 30, 5]
+# character = {}
+
+# for key in key_list:
+#     for i in [0,1,2,3]:
+#         if(key_list[i] == key):
+#             character[key] = value_list[i]
+# print(character)
+
+
+limit = 10000
+i = 1
+sum_value = 0
+while sum_value < 10000:
+    sum_value += i
+    i = i+1
+print("{}를 더할 때 {}을 넘으며 그때의 값은 {}입니다.".format(i, limit, sum_value))
