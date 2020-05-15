@@ -61,3 +61,6 @@ print(counter)
 #     if(type(character[key]) is list):
 #         for i in [0,1,2]:
 #             print(key, ":", character[key][i])
+#     if(type(character[key]) is list):
+#         for item in character[key]:
+#             print(key, ":", item)
