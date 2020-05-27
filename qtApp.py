@@ -15,7 +15,7 @@ class MyApp(QMainWindow):
         exitAction.triggered.connect(self.btn_clicked)
 
         menubar = self.menuBar()
-        menubar.setNativeMenuBar(False)
+        # menubar.setNativeMenuBar(False)
         filemenu = menubar.addMenu('&File')
         filemenu.addAction(exitAction)
 
