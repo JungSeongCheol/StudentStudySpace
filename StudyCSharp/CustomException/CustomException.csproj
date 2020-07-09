@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{187557B4-54F6-4892-8536-AE60CA38C0C6}</ProjectGuid>
+    <ProjectGuid>{0A60BB46-440B-4C26-988E-B2D14BA8C60E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>IntegerType</RootNamespace>
-    <AssemblyName>IntegerType</AssemblyName>
+    <RootNamespace>CustomException</RootNamespace>
+    <AssemblyName>CustomException</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
