@@ -34,7 +34,7 @@ namespace UsingEvent
             MyNotifier notifier = new MyNotifier();
             notifier.SomethingHappend += new EventHandler(MyHandler);
 
-            for (int i = 1; i < 30; i++)
+            for (int i = 0; i < 30; i++)
             {
                 notifier.DoSomething(i);
             }
