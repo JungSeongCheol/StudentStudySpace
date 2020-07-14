@@ -1,11 +1,10 @@
-﻿using BusInformation.BusStop;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BusInformation
+namespace BookRentalShopApp2020
 {
     static class Program
     {
@@ -17,7 +16,7 @@ namespace BusInformation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BusInformation());
+            Application.Run(new MainForm());
         }
     }
 }
