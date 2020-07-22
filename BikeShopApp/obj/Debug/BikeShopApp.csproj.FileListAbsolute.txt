@@ -1,0 +1,17 @@
+D:\PKNU2020\StudyWpf\BikeShopApp\bin\Debug\BikeShopApp.exe.config
+D:\PKNU2020\StudyWpf\BikeShopApp\bin\Debug\BikeShopApp.exe
+D:\PKNU2020\StudyWpf\BikeShopApp\bin\Debug\BikeShopApp.pdb
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.csprojAssemblyReference.cache
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\Contact.g.cs
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\MainWindow.g.cs
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\App.g.cs
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp_MarkupCompile.cache
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp_MarkupCompile.lref
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\Contact.baml
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\MainWindow.baml
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.g.resources
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.Properties.Resources.resources
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.csproj.GenerateResource.cache
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.csproj.CoreCompileInputs.cache
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.exe
+D:\PKNU2020\StudyWpf\BikeShopApp\obj\Debug\BikeShopApp.pdb
