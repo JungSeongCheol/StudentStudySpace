@@ -8,11 +8,18 @@
       d:DesignHeight="380" d:DesignWidth="800"
       Title="Contact">
 
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="30,29,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="60"/>
-        <TextBlock HorizontalAlignment="Left" Height="25" Margin="30,67,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="60"/>
-        <TextBox     Margin="108,29,50,0" TextWrapping="Wrap" Text="" RenderTransformOrigin="-2.574,0.087" Height="24" VerticalAlignment="Top"/>
-        <TextBox Margin="108,67,50,10" TextWrapping="Wrap" Text="" RenderTransformOrigin="-2.574,0.087" AcceptsReturn="True" AcceptsTab="True"/>
-
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Sender" TextAlignment="Center" Margin="5"/>
+        <TextBox Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="" Margin="5"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Message" TextAlignment="Center" Margin="5"/>
+        <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" Margin="5"/>
     </Grid>
 </Page>

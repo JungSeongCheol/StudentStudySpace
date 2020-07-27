@@ -1,0 +1,135 @@
+﻿<Page x:Class="BikeShopApp.TestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:m="clr-namespace:BikeShopApp.Maths"
+      xmlns:local="clr-namespace:BikeShopApp"
+      xmlns:bl="clr-namespace:BusinessLogic"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TestPage">
+    <Page.Resources>
+        <m:TwiceConverter x:Key="twiceConv" />
+    </Page.Resources>
+    <Grid Loaded="Grid_Loaded">
+        <!--<Label>
+            <bl:Car x:Name="car1" Speed="100" Color="Red">
+                <bl:Car.Driver>
+                    <bl:Human Name="Ted" HasDrivingLicense="True"/>
+                </bl:Car.Driver>
+            </bl:Car>
+        </Label>-->
+        <!--<Grid Width="50" Height="50" Background="Orange">
+            <Button Content="Hell Word" Margin="5"/>
+        </Grid>-->
+        <!--<Canvas Background="Orange" Margin="30">
+            <Button Canvas.Left="10" Canvas.Top="15" Content="Button A"/>
+            <Button Canvas.Left="20" Canvas.Bottom="20" Content="Button B"/>
+            <Button Canvas.Left="100" Canvas.Top="200" Content="Button C"/>
+        </Canvas>-->
+        <!--<StackPanel Background="Orange" Margin="30" Orientation="Vertical">
+            <Button Canvas.Left="10" Canvas.Top="15" Content="Button A"/>
+            <Button Canvas.Left="20" Canvas.Bottom="20" Content="Button B"/>
+            <Button Canvas.Left="100" Canvas.Top="200" Content="Button C"/>
+        </StackPanel>-->
+        <!--<DockPanel Background="Orange" Margin="30">
+            <Button Content="Button A" DockPanel.Dock="Left"/>
+            <Button Content="Button B" DockPanel.Dock="Right"/>
+            <Button Content="Button C" DockPanel.Dock="Top"/>
+            <Button Content="Button D" DockPanel.Dock="Bottom"/>
+            <Button Content="Button E"/>
+        </DockPanel>-->
+        <!--<Grid Width="500" Height="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Row="0" Grid.Column="0" Content="Button A" Margin="5"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="Button B" Margin="5"/>
+            <Button Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Content="Button C" Margin="5"/>
+            <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Button D" Margin="5"/>
+        </Grid>-->
+
+        <!--<Grid Height="150">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>--><!--
+
+        <Grid Width="350" Height="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ListBox x:Name="ListCar" Grid.Column="0" Grid.RowSpan="2"
+                     ItemsSource="{Binding}">
+                --><!--<Label Content="Element1"/>
+                <Label Content="Element2"/>
+                <TextBlock Text="Element3"/>
+                <GroupBox Header="Element4">
+                    This is a Subsentence
+                </GroupBox>--><!--
+                <ListBox.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <StackPanel>
+                            <TextBlock Text="속도" />
+                            <TextBox Text="{Binding Speed}"/>
+                            <Slider Value="{Binding Speed}" Maximum="300"/>
+                            <TextBlock Text="색상" />
+                            <Border Height="20">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Color}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBox Text="{Binding Color}"/>
+                            <TextBlock Text="운전자"/>
+                            <TextBox Text="{Binding Driver.Name}"/>
+                        </StackPanel>
+                    </ItemContainerTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ComboBox Grid.Column="1" Grid.ColumnSpan="2"  Margin="15,0,2,20" ItemsSource="{Binding}">
+                --><!--<Label Content="Element1"/>
+                <Label Content="Element2"/>
+                <TextBlock Text="Element3"/>
+                <GroupBox Header="Element4">
+                    This is a Subsentence
+                </GroupBox>--><!--
+            </ComboBox>
+        </Grid>
+
+        --><!--<StackPanel Margin="10">
+            <Slider x:Name="slider" Value="10" Minimum="0" Maximum="100"/>
+            <ProgressBar Height="30" Value="{Binding Value, ElementName=slider}"/>
+            <TextBlock Text="{Binding Value, ElementName=slider, StringFormat='{}{0:0}'}" TextAlignment="Center"/>
+
+            <TextBlock Text="{Binding Driver.Name}" FontSize="20" Height="30" TextAlignment="Center"/>
+            <TextBox Text="{Binding Speed, Mode=TwoWay, Converter={StaticResource twiceConv}}" FontSize="16" TextAlignment="Center" Width="100"/>
+            <TextBox Text="{Binding Speed, Mode=OneWayToSource}" FontSize="20" TextAlignment="Center" Width="100"/>
+        </StackPanel>-->
+        <Grid Width="300" Height="100">
+            <!--<Label Content="{StaticResource button}" Background="{StaticResource accentBrush}">
+            </Label>-->
+        </Grid>
+    </Grid>
+</Page>
