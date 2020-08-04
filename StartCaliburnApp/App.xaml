@@ -1,0 +1,15 @@
+﻿<Application x:Class="StartCaliburnApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StartCaliburnApp">
+    <!--StartupUri="MainWindow.xaml" 여기선 필요없음.-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="bootstrapper"/> <!-- 안나오면 빌드하는게 좋음. (그래야 xaml에 필요한 게 만들어져서 오류가안뜸-->
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
