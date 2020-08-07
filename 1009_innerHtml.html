@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Inner HTML</title>
+        <script>
+            window.onload = function (){
+                // 변수선언
+
+                // var output = '';
+                // for(var i=0; i< 10; i++){
+                //     output += '<h1>header - ' + i + '</h1>';
+                // }
+                // document.body.textContent = output;
+
+                // 02. gardation div
+
+                var output = "";
+                for(let index=0; index < 256; index++){
+                    output += "<div></div>";
+                }
+                document.body.innerHTML = output;
+
+                var divs = document.querySelectorAll("div");
+                // div.style.backgroundColor= "";
+                for(let i=0; i < divs.length; i++){
+                    var div = divs[i];
+
+                    //스타일 적용
+                    div.style.height = "5px"
+                    div.style.backgroundColor = "rgb(" + i +"," +i + "," + i + ")";
+                }
+            };
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>Document Example</title>
+        <!-- <script>
+            document.querySelector("h1").style.backgroundColor = "red"; // 실행순서 반드시 중요, 여기에있으면 정상적으로 실행되지 않고 오류가 나옴
+        </script> -->
+        <script>
+            window.onload = function () {
+                // document.querySelector("h1").style.backgroundColor = "red";
+
+                // var selector = document.getElementById("selector");
+                // selector.style.backgroundColor = "green";
+                // selector.innerHTML = "javascript changed";
+
+                // var header = document.querySelector("h1");
+                // header.style.backgroundColor = "red";
+                // header.style.color = "yellow";
+                // header.innerHTML = "한글로 보내요";
+
+                var headers = document.querySelectorAll("h1");
+
+                for (var i = 0; i < headers.length; i++){
+                    var hedaer = headers[i];
+
+                    hedaer.style.color = "orange";
+                    hedaer.style.backgroundColor = "red";
+                    hedaer.innerHTML = "From JavaScript : " + i;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Lorem ipsum dolor slit amet</h1>
+        <h2>Lorem ipsum dolor slit amet</h2>
+        <h1 id="selector">Test</h1>
+        <!-- <script>
+            document.querySelector("h1").style.backgroundColor = "red";
+        </script> -->
+
+    </body>
+</html>
