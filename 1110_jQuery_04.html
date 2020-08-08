@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>jQuery Example</title>
+        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            
+            $(document).ready(function() {
+                var output = "";
+                for(let index=0; index < 256; index++){
+                    output += "<div></div>";
+                }
+                // document.body.innerHTML = output; // 일반 js
+                $("body").html(output);
+
+                $("div").css({
+                    height: 3,
+                    backgroundColor: function(index) {
+                        return "rgb(" + index + ", " + index + ", " + index + ")";
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
