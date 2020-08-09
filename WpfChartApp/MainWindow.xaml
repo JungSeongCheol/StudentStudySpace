@@ -9,7 +9,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <d3:Chart BottomTitle="Time" LeftTitle="Phto Value">
-            <d3:LineGraph x:Name="linegraph" Description="Phto Register value"
+            <d3:LineGraph x:Name="linegraph" Description="Phto Register value" PlotOriginX="100" 
                           Stroke="Red" StrokeThickness="4"/>
         </d3:Chart>
     </Grid>

@@ -32,8 +32,8 @@ namespace WpfChartApp
 
             var x = new int[] { 1,2,3,4,5,6,7,8,9,10};
             var y = new int[] { 100, 98, 97, 90, 20, 10, 60, 70, 44, 56};
-
             linegraph.Plot(x, y);
+            linegraph.
         }
     }
 }
