@@ -50,7 +50,7 @@
             // 
             // PlayButton
             // 
-            this.PlayButton.Location = new System.Drawing.Point(725, 130);
+            this.PlayButton.Location = new System.Drawing.Point(725, 152);
             this.PlayButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Size = new System.Drawing.Size(120, 40);
@@ -62,7 +62,7 @@
             // status
             // 
             this.status.AutoSize = true;
-            this.status.Location = new System.Drawing.Point(682, 185);
+            this.status.Location = new System.Drawing.Point(677, 264);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(238, 20);
             this.status.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.roomTextBox.CustomButton.UseSelectable = true;
             this.roomTextBox.CustomButton.Visible = false;
             this.roomTextBox.Lines = new string[0];
-            this.roomTextBox.Location = new System.Drawing.Point(624, 80);
+            this.roomTextBox.Location = new System.Drawing.Point(626, 80);
             this.roomTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roomTextBox.MaxLength = 32767;
             this.roomTextBox.Name = "roomTextBox";
@@ -103,7 +103,7 @@
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(850, 69);
+            this.enterButton.Location = new System.Drawing.Point(873, 69);
             this.enterButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(123, 41);

@@ -17,6 +17,7 @@ namespace WinFormGomku
     public partial class WaitingRoom : MetroForm
     {
         public static Thread thread; // 통신을 위한 쓰레드
+        public static string roomNum;
         private NetworkStream stream;
         bool oneCheck = true;
 
@@ -75,15 +76,6 @@ namespace WinFormGomku
                     ChatDataTextBox.ScrollToCaret();
                 }
 
-                //if (message.Contains("[Make]"))
-                //{
-                //    string s = message.Split(']')[1];
-                //    this.Invoke(new Action(delegate ()
-                //    {
-                //        dgvRoomInfo.Rows.Clear();
-                //    }));
-                //}
-
                 if (message.Contains("[Refresh]"))
                 {
                     string[] RoomInfo = message.Split(']')[1].Split(',');
@@ -111,6 +103,7 @@ namespace WinFormGomku
         {
             this.Activate();
             ChatTextBox.Focus();
+            refreshRoomTile_Click(sender, e);
         }
 
         private void ChatTile_Click(object sender, EventArgs e)
@@ -171,6 +164,14 @@ namespace WinFormGomku
         {
             byte[] buf = Encoding.ASCII.GetBytes("[PlayingRoom]Refresh");
             stream.Write(buf, 0, buf.Length);
+        }
+
+        private void dgvRoomInfo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //roomNum = dgvRoomInfo.Rows[e.RowIndex].Cells[0].Value.ToString();
+            Hide();
+            MultiPlay multiPlay = new MultiPlay();
+            multiPlay.Show();
         }
     }
 }

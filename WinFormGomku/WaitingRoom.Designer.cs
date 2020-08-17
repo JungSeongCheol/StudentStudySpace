@@ -60,6 +60,7 @@
             this.dgvRoomInfo.RowTemplate.Height = 27;
             this.dgvRoomInfo.Size = new System.Drawing.Size(925, 421);
             this.dgvRoomInfo.TabIndex = 0;
+            this.dgvRoomInfo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomInfo_CellDoubleClick);
             // 
             // RoomNumber
             // 

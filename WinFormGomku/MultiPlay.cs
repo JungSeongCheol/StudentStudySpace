@@ -19,6 +19,7 @@ namespace WinFormGomku
         //private Thread thread; // 통신용 스레드 선언
         private TcpClient tcpClient; // TCP Client선언
         private NetworkStream stream; // 내부 스트림
+        private string roomNum;
 
         private const int rectSize = 33; // 오목판 셀 수
         private const int edgeCount = 15; // 오목판 선 갯수
@@ -44,6 +45,8 @@ namespace WinFormGomku
                 board = new Horse[edgeCount, edgeCount];
                 nowTurn = false;
                 tcpClient = LoginForm.tcpClient;
+                roomNum = WaitingRoom.roomNum;
+                //this.roomTextBox.Text = roomNum;
             }));
 
         }
@@ -222,19 +225,6 @@ namespace WinFormGomku
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    tcpClient.Connect("127.0.0.1", 9876); // localhost로 임시로 사용한것일뿐, 나중에는 얼마든 변경가능
-            //}
-            //catch(Exception)
-            //{
-            //    MetroMessageBox.Show(this, $"서버가 켜져있지 않습니다.", "접속오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-
-            //stream = tcpClient.GetStream();
-
             stream = LoginForm.tcpClient.GetStream();
 
             WaitingRoom.thread = new Thread(new ThreadStart(read));
