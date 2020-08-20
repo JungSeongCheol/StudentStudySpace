@@ -10,13 +10,15 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace WinFormGomku
 {
     public partial class LoginForm : MetroForm
     {
         public static TcpClient tcpClient;
-        private NetworkStream networkStream;
+        public static NetworkStream stream;
+
 
         public LoginForm()
         {
@@ -26,8 +28,17 @@ namespace WinFormGomku
         private void LoginButton_Click(object sender, EventArgs e)
         {
             tcpClient = new TcpClient();
-            tcpClient.Connect("127.0.0.1", 9876);
-            networkStream = tcpClient.GetStream();
+            try
+            {
+                tcpClient.Connect("127.0.0.1", 9876);
+            }
+            catch (Exception)
+            {
+                MetroMessageBox.Show(this, "서버가 켜져있지 않습니다. 서버를 먼저 켜주세요", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            stream = tcpClient.GetStream();
 
             if (string.IsNullOrEmpty(LoginIdTextBox.Text) && string.IsNullOrEmpty(PasswordTestBox.Text))
             {
@@ -55,16 +66,13 @@ namespace WinFormGomku
 
             byte[] buf = new byte[256];
             buf = Encoding.ASCII.GetBytes("[Login]" + LoginIdTextBox.Text + "," + PasswordTestBox.Text);
-            networkStream.Write(buf, 0, buf.Length);
-            int bufBytes = networkStream.Read(buf, 0, buf.Length);
+            stream.Write(buf, 0, buf.Length);
+            int bufBytes = stream.Read(buf, 0, buf.Length);
 
             string message = Encoding.ASCII.GetString(buf, 0, bufBytes);
 
             if(message == "OK"){
                 Hide();
-                //MultiPlay multiPlay = new MultiPlay();
-                //multiPlay.FormClosed += new FormClosedEventHandler(childForm_Closed);
-                //multiPlay.Show();
                 WaitingRoom waitingRoom = new WaitingRoom();
                 waitingRoom.FormClosed += new FormClosedEventHandler(childForm_Closed);
                 waitingRoom.Show();
@@ -98,12 +106,12 @@ namespace WinFormGomku
         
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            this.Activate();
-            LoginIdTextBox.Focus(); // 로드시 자동으로 액티브하고(활성화 시키고) 그걸로 자동 포커스 가게 만들었습니다.
+            this.ActiveControl = LoginIdTextBox; // 로드시 자동포커스
         }
 
         private void PasswordTestBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (e.KeyChar == (char)13)
             {
                 LoginButton_Click(sender, e);
@@ -130,7 +138,10 @@ namespace WinFormGomku
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            if(tcpClient != null)
+            {
+                tcpClient.Close();
+            }
         }
     }
 }

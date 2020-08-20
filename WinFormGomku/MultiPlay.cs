@@ -11,15 +11,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormGomku.Helpers;
 
 namespace WinFormGomku
 {
     public partial class MultiPlay : MetroForm
     {
-        //private Thread thread; // 통신용 스레드 선언
+        private Thread thread; // 통신용 스레드 선언
         private TcpClient tcpClient; // TCP Client선언
         private NetworkStream stream; // 내부 스트림
-        private string roomNum;
 
         private const int rectSize = 33; // 오목판 셀 수
         private const int edgeCount = 15; // 오목판 선 갯수
@@ -36,63 +36,79 @@ namespace WinFormGomku
         public MultiPlay()
         {
             InitializeComponent();
-            this.Invoke(new Action(delegate ()
+            playing = false;    // 플레이, 들어온상태, 스레딩, 보드, 턴상태 모두 초기화시켜서 처음 들어왔을때의 상태를 만듬
+            entered = false;
+            threading = false;
+            board = new Horse[edgeCount, edgeCount];
+            nowTurn = false;
+            tcpClient = LoginForm.tcpClient;
+            stream = LoginForm.stream;
+            if (Status.player == false)
             {
-                this.PlayButton.Enabled = false;
-                playing = false;    // 플레이, 들어온상태, 스레딩, 보드, 턴상태 모두 초기화시켜서 처음 들어왔을때의 상태를 만듬
-                entered = false;
-                threading = false;
-                board = new Horse[edgeCount, edgeCount];
-                nowTurn = false;
-                tcpClient = LoginForm.tcpClient;
-                roomNum = WaitingRoom.roomNum;
-                //this.roomTextBox.Text = roomNum;
-            }));
+                readyButton.Visible = false;
 
+                status.Text = "관전중....";
+            }
+
+            Thread.Sleep(10);
+            thread = new Thread(new ThreadStart(read));
+            thread.Start();
+            threading = true; // 스레드가 시작되는것을 알림
+
+            if (Status.player == false)
+            {
+                byte[] buf = Encoding.ASCII.GetBytes("[Observer]");
+                stream.Write(buf, 0, buf.Length);
+            }
         }
 
         private void CheckerBoard_MouseDown(object sender, MouseEventArgs e)
         {
             this.Invoke(new Action(delegate ()
             {
-                if (!playing)
+                if (Status.player == false)
                 {
-                    MetroMessageBox.Show(this, "게임을 실행해야 작동합니다. '게임시작' 버튼을 눌러주세요.");
+                    //MetroMessageBox.Show(this,"관전중입니다.");
                     return;
                 }
-                if (!nowTurn) // 현재 턴이 아닐시 실행안됨
+                else if (!playing)
+                {
+                    MetroMessageBox.Show(this, "게임을 실행해주세요.");
                     return;
-
+                }
+                if (!nowTurn)
+                {
+                    return;
+                }
                 Graphics g = this.CheckerBoard.CreateGraphics();
-                int x = e.X / rectSize; // 마우스의 위치의 X좌표를 이용 (rectSize는 바둑알의 위치를 잡아 주기위해, 이 좌표안에 들어갔을시 놓아짐)
-                int y = e.Y / rectSize; // 마우스의 위치의 Y좌표를 이용
-            
-                if(x < 0 || y < 0 || x >= edgeCount || y >= edgeCount)
+                int x = e.X / rectSize;
+                int y = e.Y / rectSize;
+                if (x < 0 || y < 0 || x >= edgeCount || y >= edgeCount)
                 {
-                    // 좌표를 벗어났을시
-                    MetroMessageBox.Show(this, "바둑판 안에 만 놓을수 있습니다.", "규칙을 지켜주세요");
+                    MessageBox.Show("테두리를 벗어날 수 없습니다.");
                     return;
                 }
-
                 if (board[x, y] != Horse.none) return;
+                
                 board[x, y] = nowPlayer;
-
                 SolidBrush brush;
                 Pen pen = new Pen(Color.Black, 2);
 
                 if (nowPlayer == Horse.BLACK)
                 {
-                     brush = new SolidBrush(Color.Black); // 검은색깔돌로 원을 채우기 위한 브러쉬 사용
+                     brush = new SolidBrush(Color.Black);
                 }
                 else
                 {
-                    brush = new SolidBrush(Color.White); //하얀색돌로 원을 그림
+                    brush = new SolidBrush(Color.White);
                 }
 
-                g.DrawEllipse(pen, x * rectSize, y * rectSize, rectSize, rectSize); //흰색돌의 테두리부분을 잡아주기위해서
+                g.DrawEllipse(pen, x * rectSize, y * rectSize, rectSize, rectSize);
                 g.FillEllipse(brush, x * rectSize, y * rectSize, rectSize, rectSize);
 
-                string message = "[Put]" + roomTextBox.Text + "," + x + "," + y; // 놓은 위치 메세지
+                /* 놓은 바둑돌의 위치 보내기 */
+                //string message = "[Put]" + roomTextBox.Text + "," + x + "," + y;
+                string message = "[Put]" + x + "," + y + "," + (nowPlayer == Horse.BLACK ? "B" : "W"); //[Put]1,2,B 전송
                 byte[] buf = Encoding.ASCII.GetBytes(message);
                 stream.Write(buf, 0, buf.Length);
 
@@ -100,8 +116,8 @@ namespace WinFormGomku
                 {
                     status.Text = "플레이어가 승리했습니다.";
                     playing = false;
-                    PlayButton.Text = "재시작";
-                    PlayButton.Enabled = true;
+                    readyButton.Text = "재시작";
+                    readyButton.Enabled = true;
                     MetroMessageBox.Show(this, status.Text);
                     return;
                 }
@@ -111,9 +127,9 @@ namespace WinFormGomku
                     this.Invoke(new Action(delegate ()
                     {
                         status.Text = " 상대 플레이어의 차례입니다. ";
-                        nowTurn = false;
                     }));
                 }
+                nowTurn = false;
             }));
         }
 
@@ -195,47 +211,24 @@ namespace WinFormGomku
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            this.Invoke(new Action(delegate ()
-            {
-                if (!playing)
-                {
-                    refresh();
-                    playing = true;
-                    string message = "[Play]";
-                    byte[] buf = Encoding.ASCII.GetBytes(message + this.roomTextBox.Text); // 아스키 코드로 읽어야됨.
-                    stream.Write(buf, 0, buf.Length);
-                    this.status.Text = "상대 플레이어를 기다립니다.";
-                    this.PlayButton.Enabled = false;
-                }
-            }));
+
         }
 
         private void refresh()
         {
-            this.Invoke(new Action(delegate ()
+            CheckerBoard.Invoke(new Action(delegate ()
             {
                 this.CheckerBoard.Refresh();
                 for (int i = 0; i < edgeCount; i++)
                     for (int j = 0; j < edgeCount; j++)
                         board[i, j] = Horse.none;
-                PlayButton.Enabled = false; // 지금 Playbutton을 누르지 못하게 만든다.
             }));
-
         }
 
-        private void enterButton_Click(object sender, EventArgs e)
-        {
-            stream = LoginForm.tcpClient.GetStream();
-
-            WaitingRoom.thread = new Thread(new ThreadStart(read));
-            WaitingRoom.thread.Start();
-            threading = true; // 스레드가 시작되는것을 알림
-
-            string message = "[Enter]";
-            byte[] buf = Encoding.ASCII.GetBytes(message + this.roomTextBox.Text);
-            stream.Write(buf, 0, buf.Length);
-
-        }
+        //private void enterButton_Click(object sender, EventArgs e)
+        //{
+        //    stream = LoginForm.tcpClient.GetStream();
+        //}
 
         private void read()
         {
@@ -243,107 +236,149 @@ namespace WinFormGomku
             {
                 byte[] buf = new byte[1024]; // 1024의 바이트를 넣는다
                 int bufBytes = stream.Read(buf, 0, buf.Length);
-                string message = Encoding.ASCII.GetString(buf, 0, bufBytes);
+                string message = Encoding.UTF8.GetString(buf, 0, bufBytes);
                 Pen pen = new Pen(Color.Black, 2);
                 // 접속성공시 Enter반환(enterButton Click 참조
-                if (message.Contains("[Enter]")) //Contains는 message에 포함된 문자열이 있을시 불형태!! 로 true, false반환하는것이다.
-                {
-                    this.Invoke(new Action(delegate ()
-                    {
-                        this.status.Text = "[" + this.roomTextBox.Text + "] 방에 접속했습니다.";
-                        this.roomTextBox.Enabled = false;
-                        this.enterButton.Enabled = false;
-                        entered = true;
-                    }));
-                }
 
-                if(message.Contains("[Full"))
+                if (Status.player == true)
                 {
-                    this.status.Text = "이미 가득 찬 방입니다.";
-                    //closeNetwork();
-                }
-                // 게임시작시
-                if (message.Contains("[Play]"))
-                {
-                    refresh();
-                    string horse = message.Split(']')[1];
-                    if (horse.Contains("Black"))
+                    if (message.Contains("[Play]"))
                     {
-                        this.Invoke(new Action(delegate ()
+                        refresh();
+                        string horse = message.Split(']')[1];
+                        if (horse.Contains("Black"))
                         {
-                            this.status.Text = "당신의 차례입니다.";
+                            status.Invoke(new Action(delegate ()
+                            {
+                                this.status.Text = "당신의 차례입니다.";
+                            }));
                             nowTurn = true;
                             nowPlayer = Horse.BLACK;
-                        }));
-
-                    }
-                    else
-                    {
-                        this.Invoke(new Action(delegate ()
+                        }
+                        else
                         {
-                            this.status.Text = "상대방의 차례입니다.";
+                            status.Invoke(new Action(delegate ()
+                            {
+                                this.status.Text = "상대방의 차례입니다.";
+                            }));
                             nowTurn = false;
                             nowPlayer = Horse.WHITE;
-                        }));
+                        }
+                        playing = true;
                     }
-                    playing = true;
-                }
-
-                if (message.Contains("[Exit]"))
-                {
-
-                    this.Invoke(new Action(delegate ()
+                    if (message.Contains("[Exit]"))
                     {
                         this.status.Text = "상대방이 나갔습니다.";
                         refresh();
-                    }));
-
+                    }
+                    /* 상대방이 돌을 둔 경우 (메시지: [Put]{X,Y}) */
+                    if (message.Contains("[Put]"))
+                    {
+                        string position = message.Split(']')[1];
+                        int x = Convert.ToInt32(position.Split(',')[0]);
+                        int y = Convert.ToInt32(position.Split(',')[1]);
+                        Horse enemyPlayer = Horse.none;
+                        if (nowPlayer == Horse.BLACK)
+                        {
+                            enemyPlayer = Horse.WHITE;
+                        }
+                        else
+                        {
+                            enemyPlayer = Horse.BLACK;
+                        }
+                        if (board[x, y] != Horse.none) continue;
+                        board[x, y] = enemyPlayer;
+                        Graphics g = this.CheckerBoard.CreateGraphics();
+                        SolidBrush brush;
+                        if (enemyPlayer == Horse.BLACK)
+                        {
+                            brush = new SolidBrush(Color.Black);
+                        }
+                        else
+                        {
+                            brush = new SolidBrush(Color.White);
+                        }
+                        g.DrawEllipse(pen, x * rectSize, y * rectSize, rectSize, rectSize);
+                        g.FillEllipse(brush, x * rectSize, y * rectSize, rectSize, rectSize);
+                        if (judge(enemyPlayer))
+                        {
+                            status.Text = "패배했습니다.";
+                            playing = false;
+                        }
+                        else
+                        {
+                            status.Text = "당신이 둘 차례입니다.";
+                        }
+                        nowTurn = true;
+                    }
+                    if (message.Contains("[Chats]"))
+                    {
+                        string s = message.Split(']')[1].Replace((char)0x02, ']');
+                        for (int i = 0; i < s.Length; i++)
+                        {
+                            if (s[i] == ' ')
+                            {
+                                s = s.Insert(i, ": ");
+                                break;
+                            }
+                        }
+                        ChatDataTextBox.Invoke((MethodInvoker)delegate ()
+                        {
+                            ChatDataTextBox.AppendText($"{s} \n");
+                            ChatDataTextBox.ScrollToCaret();
+                        });
+                    }
                 }
-
-                if (message.Contains("[Put]"))
+                else
                 {
-                    string position = message.Split(']')[1];
-                    int x = Convert.ToInt32(position.Split(',')[0]);
-                    int y = Convert.ToInt32(position.Split(',')[1]);
-                    Horse enemyPlayer = Horse.none;
-                    SolidBrush brush;
-                    if(nowPlayer == Horse.BLACK)
+                    if (message.Contains("[Put]"))
                     {
-                        enemyPlayer = Horse.WHITE;
-                    }
-                    else
-                    {
-                        enemyPlayer = Horse.BLACK;
-                    }
+                        string s = message.Split(']')[1];
 
-                    if (board[x, y] != Horse.none) continue;
-                    board[x, y] = enemyPlayer;
-                    Graphics g = this.CheckerBoard.CreateGraphics();
-                    
-                    if (enemyPlayer == Horse.BLACK)
-                        brush = new SolidBrush(Color.Black);
-                    else
-                        brush = new SolidBrush(Color.White);
+                        string[] position = s.Split(';');
 
-                    g.DrawEllipse(pen, x * rectSize, y * rectSize, rectSize, rectSize);
-                    g.FillEllipse(brush, x * rectSize, y * rectSize, rectSize, rectSize);
+                        Graphics g = this.CheckerBoard.CreateGraphics();
 
-                    if (judge(enemyPlayer))
-                    {
-                        status.Text = "패배했습니다.";
-                        playing = false;
-                        PlayButton.Text = "재시작";
-                        PlayButton.Enabled = true;
+                        for (int i = 0; i < position.Length - 1; i++)
+                        {
+                            SolidBrush brush;
+                            if (position[i].Split(',')[0] == "W")
+                            {
+                                brush = new SolidBrush(Color.White);
+                            }
+                            else
+                            {
+                                brush = new SolidBrush(Color.Black);
+                            }
+
+                            int x = Convert.ToInt32(position[i].Split(',')[1]);
+                            int y = Convert.ToInt32(position[i].Split(',')[2]);
+                            g.DrawEllipse(pen, x * rectSize, y * rectSize, rectSize, rectSize);
+                            g.FillEllipse(brush, x * rectSize, y * rectSize, rectSize, rectSize);
+                        }
                     }
 
-                    else
+                    else if (message.Contains("[Chats]"))
                     {
-                        status.Text = "당신이 둘 차례입니다.";
+                        string s = message.Split(']')[1].Replace((char)0x02, ']');
+                        for (int i = 0; i < s.Length; i++)
+                        {
+                            if (s[i] == ' ')
+                            {
+                                s = s.Insert(i, ": ");
+                                break;
+                            }
+                        }
+
+                       ChatDataTextBox.Invoke((MethodInvoker)delegate ()
+                       {
+                           ChatDataTextBox.AppendText($"{s} \n");
+                           ChatDataTextBox.ScrollToCaret();
+                       });
+
                     }
-                    nowTurn = true;
                 }
             }
-            
         }
 
         private void closeNetwork()
@@ -358,16 +393,12 @@ namespace WinFormGomku
 
         private void MultiPlay_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //closeNetwork();
-            WaitingRoom waitingRoom = new WaitingRoom();
-            waitingRoom.FormClosed += new FormClosedEventHandler(childForm_Closed);
-            waitingRoom.Show();
+            thread.Abort();
+            
         }
 
         private void childForm_Closed(object sender, FormClosedEventArgs e)
         {
-            //GomkuWinForm gomkuWinForm = new GomkuWinForm();
-            //gomkuWinForm.Show();
 
         }
 
@@ -379,15 +410,36 @@ namespace WinFormGomku
             }));
         }
 
-        private void roomTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void status_Click(object sender, EventArgs e)
         {
-            this.Invoke(new Action(delegate ()
+
+        }
+
+        private void readyButton_Click(object sender, EventArgs e)
+        {
+            status.Text = "Ready";
+            byte[] buf = Encoding.ASCII.GetBytes($"[PlayingRoom]Ready");
+            stream.Write(buf, 0, buf.Length);
+            readyButton.Enabled = false;
+        }
+
+        private void ChatTile_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(ChatTextBox.Text))
             {
-                if (e.KeyChar == (char)13)
-                {
-                    enterButton_Click(sender, e);
-                }
-            }));
+                byte[] buf = Encoding.UTF8.GetBytes("[PlayingRoom]Chats" + (char)0x01 + ChatTextBox.Text);  //한글로 보낼려면 UTF8로.!!
+                LoginForm.stream.Write(buf, 0, buf.Length);
+                ChatTextBox.Clear();
+            }
+            ChatTextBox.Text = string.Empty;
+        }
+
+        private void ChatTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ChatTile_Click(sender, e);
+            }
         }
     }
 }

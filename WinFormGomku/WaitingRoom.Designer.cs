@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvRoomInfo = new System.Windows.Forms.DataGridView();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUsersInfo = new System.Windows.Forms.DataGridView();
             this.WaitingRoomUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +39,10 @@
             this.ChatTile = new MetroFramework.Controls.MetroTile();
             this.ChatDataTextBox = new System.Windows.Forms.RichTextBox();
             this.refreshRoomTile = new MetroFramework.Controls.MetroTile();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObserveColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersInfo)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +52,9 @@
             this.dgvRoomInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RoomNumber,
-            this.RoomName});
+            this.RoomName,
+            this.RoomUsers,
+            this.ObserveColum});
             this.dgvRoomInfo.Location = new System.Drawing.Point(23, 72);
             this.dgvRoomInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvRoomInfo.Name = "dgvRoomInfo";
@@ -61,22 +65,6 @@
             this.dgvRoomInfo.Size = new System.Drawing.Size(925, 421);
             this.dgvRoomInfo.TabIndex = 0;
             this.dgvRoomInfo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomInfo_CellDoubleClick);
-            // 
-            // RoomNumber
-            // 
-            this.RoomNumber.HeaderText = "방번호";
-            this.RoomNumber.MinimumWidth = 6;
-            this.RoomNumber.Name = "RoomNumber";
-            this.RoomNumber.ReadOnly = true;
-            this.RoomNumber.Width = 125;
-            // 
-            // RoomName
-            // 
-            this.RoomName.HeaderText = "방제목";
-            this.RoomName.MinimumWidth = 6;
-            this.RoomName.Name = "RoomName";
-            this.RoomName.ReadOnly = true;
-            this.RoomName.Width = 200;
             // 
             // dgvUsersInfo
             // 
@@ -114,7 +102,7 @@
             // 
             this.PlayerIDLabel.AutoSize = true;
             this.PlayerIDLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.PlayerIDLabel.Location = new System.Drawing.Point(1019, 633);
+            this.PlayerIDLabel.Location = new System.Drawing.Point(978, 518);
             this.PlayerIDLabel.Name = "PlayerIDLabel";
             this.PlayerIDLabel.Size = new System.Drawing.Size(105, 25);
             this.PlayerIDLabel.TabIndex = 1;
@@ -217,6 +205,38 @@
             this.refreshRoomTile.UseSelectable = true;
             this.refreshRoomTile.Click += new System.EventHandler(this.refreshRoomTile_Click);
             // 
+            // RoomNumber
+            // 
+            this.RoomNumber.HeaderText = "방번호";
+            this.RoomNumber.MinimumWidth = 6;
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.ReadOnly = true;
+            this.RoomNumber.Width = 125;
+            // 
+            // RoomName
+            // 
+            this.RoomName.HeaderText = "방제목";
+            this.RoomName.MinimumWidth = 6;
+            this.RoomName.Name = "RoomName";
+            this.RoomName.ReadOnly = true;
+            this.RoomName.Width = 200;
+            // 
+            // RoomUsers
+            // 
+            this.RoomUsers.HeaderText = "인원수";
+            this.RoomUsers.MinimumWidth = 6;
+            this.RoomUsers.Name = "RoomUsers";
+            this.RoomUsers.ReadOnly = true;
+            this.RoomUsers.Width = 125;
+            // 
+            // ObserveColum
+            // 
+            this.ObserveColum.HeaderText = "관전인원";
+            this.ObserveColum.MinimumWidth = 6;
+            this.ObserveColum.Name = "ObserveColum";
+            this.ObserveColum.ReadOnly = true;
+            this.ObserveColum.Width = 125;
+            // 
             // WaitingRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -252,12 +272,14 @@
         private MetroFramework.Controls.MetroTextBox ChatTextBox;
         private MetroFramework.Controls.MetroTile CallMakingRoomTile;
         private MetroFramework.Controls.MetroTile ExitTile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomName;
         private MetroFramework.Controls.MetroTile ChatTile;
         private System.Windows.Forms.DataGridViewTextBoxColumn WaitingRoomUserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserLocation;
         private System.Windows.Forms.RichTextBox ChatDataTextBox;
         private MetroFramework.Controls.MetroTile refreshRoomTile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObserveColum;
     }
 }

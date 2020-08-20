@@ -78,6 +78,7 @@
     <Compile Include="GomkuWinForm.Designer.cs">
       <DependentUpon>GomkuWinForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Status.cs" />
     <Compile Include="MakingRoom.cs">
       <SubType>Form</SubType>
     </Compile>

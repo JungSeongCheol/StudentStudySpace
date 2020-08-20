@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.CheckerBoard = new System.Windows.Forms.PictureBox();
-            this.PlayButton = new MetroFramework.Controls.MetroButton();
+            this.readyButton = new MetroFramework.Controls.MetroButton();
             this.status = new MetroFramework.Controls.MetroLabel();
-            this.roomTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.enterButton = new MetroFramework.Controls.MetroButton();
+            this.ChatDataTextBox = new System.Windows.Forms.RichTextBox();
+            this.ChatTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.ChatTile = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.CheckerBoard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,79 +49,94 @@
             this.CheckerBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.CheckerBoard_Paint);
             this.CheckerBoard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CheckerBoard_MouseDown);
             // 
-            // PlayButton
+            // readyButton
             // 
-            this.PlayButton.Location = new System.Drawing.Point(725, 152);
-            this.PlayButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(120, 40);
-            this.PlayButton.TabIndex = 1;
-            this.PlayButton.Text = "게임시작";
-            this.PlayButton.UseSelectable = true;
-            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            this.readyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.readyButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.readyButton.Location = new System.Drawing.Point(659, 79);
+            this.readyButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.readyButton.Name = "readyButton";
+            this.readyButton.Size = new System.Drawing.Size(172, 64);
+            this.readyButton.TabIndex = 1;
+            this.readyButton.Text = "Ready";
+            this.readyButton.UseSelectable = true;
+            this.readyButton.Click += new System.EventHandler(this.readyButton_Click);
             // 
             // status
             // 
             this.status.AutoSize = true;
-            this.status.Location = new System.Drawing.Point(677, 264);
+            this.status.Location = new System.Drawing.Point(659, 180);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(238, 20);
+            this.status.Size = new System.Drawing.Size(264, 20);
             this.status.TabIndex = 2;
-            this.status.Text = "방을 입력하여 접속할 수 있습니다.";
+            this.status.Text = "다른유저의 레디를 기다리는 중입니다.";
+            this.status.Click += new System.EventHandler(this.status_Click);
             // 
-            // roomTextBox
+            // ChatDataTextBox
+            // 
+            this.ChatDataTextBox.Location = new System.Drawing.Point(647, 255);
+            this.ChatDataTextBox.Name = "ChatDataTextBox";
+            this.ChatDataTextBox.ReadOnly = true;
+            this.ChatDataTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.ChatDataTextBox.Size = new System.Drawing.Size(340, 307);
+            this.ChatDataTextBox.TabIndex = 3;
+            this.ChatDataTextBox.Text = "";
+            // 
+            // ChatTextBox
             // 
             // 
             // 
             // 
-            this.roomTextBox.CustomButton.Image = null;
-            this.roomTextBox.CustomButton.Location = new System.Drawing.Point(191, 2);
-            this.roomTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.roomTextBox.CustomButton.Name = "";
-            this.roomTextBox.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.roomTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.roomTextBox.CustomButton.TabIndex = 1;
-            this.roomTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.roomTextBox.CustomButton.UseSelectable = true;
-            this.roomTextBox.CustomButton.Visible = false;
-            this.roomTextBox.Lines = new string[0];
-            this.roomTextBox.Location = new System.Drawing.Point(626, 80);
-            this.roomTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.roomTextBox.MaxLength = 32767;
-            this.roomTextBox.Name = "roomTextBox";
-            this.roomTextBox.PasswordChar = '\0';
-            this.roomTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.roomTextBox.SelectedText = "";
-            this.roomTextBox.SelectionLength = 0;
-            this.roomTextBox.SelectionStart = 0;
-            this.roomTextBox.ShortcutsEnabled = true;
-            this.roomTextBox.Size = new System.Drawing.Size(219, 30);
-            this.roomTextBox.TabIndex = 3;
-            this.roomTextBox.UseSelectable = true;
-            this.roomTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.roomTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.roomTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomTextBox_KeyPress);
+            this.ChatTextBox.CustomButton.Image = null;
+            this.ChatTextBox.CustomButton.Location = new System.Drawing.Point(181, 2);
+            this.ChatTextBox.CustomButton.Name = "";
+            this.ChatTextBox.CustomButton.Size = new System.Drawing.Size(37, 37);
+            this.ChatTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ChatTextBox.CustomButton.TabIndex = 1;
+            this.ChatTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ChatTextBox.CustomButton.UseSelectable = true;
+            this.ChatTextBox.CustomButton.Visible = false;
+            this.ChatTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.ChatTextBox.Lines = new string[0];
+            this.ChatTextBox.Location = new System.Drawing.Point(647, 593);
+            this.ChatTextBox.MaxLength = 32767;
+            this.ChatTextBox.Name = "ChatTextBox";
+            this.ChatTextBox.PasswordChar = '\0';
+            this.ChatTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ChatTextBox.SelectedText = "";
+            this.ChatTextBox.SelectionLength = 0;
+            this.ChatTextBox.SelectionStart = 0;
+            this.ChatTextBox.ShortcutsEnabled = true;
+            this.ChatTextBox.Size = new System.Drawing.Size(221, 42);
+            this.ChatTextBox.TabIndex = 0;
+            this.ChatTextBox.UseSelectable = true;
+            this.ChatTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ChatTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ChatTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChatTextBox_KeyPress);
             // 
-            // enterButton
+            // ChatTile
             // 
-            this.enterButton.Location = new System.Drawing.Point(873, 69);
-            this.enterButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(123, 41);
-            this.enterButton.TabIndex = 4;
-            this.enterButton.Text = "접속하기";
-            this.enterButton.UseSelectable = true;
-            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
+            this.ChatTile.ActiveControl = null;
+            this.ChatTile.Location = new System.Drawing.Point(884, 593);
+            this.ChatTile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ChatTile.Name = "ChatTile";
+            this.ChatTile.Size = new System.Drawing.Size(103, 42);
+            this.ChatTile.TabIndex = 5;
+            this.ChatTile.Text = "채팅";
+            this.ChatTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChatTile.UseSelectable = true;
+            this.ChatTile.Click += new System.EventHandler(this.ChatTile_Click);
             // 
             // MultiPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 750);
-            this.Controls.Add(this.enterButton);
-            this.Controls.Add(this.roomTextBox);
+            this.Controls.Add(this.ChatTile);
+            this.Controls.Add(this.ChatTextBox);
+            this.Controls.Add(this.ChatDataTextBox);
             this.Controls.Add(this.status);
-            this.Controls.Add(this.PlayButton);
+            this.Controls.Add(this.readyButton);
             this.Controls.Add(this.CheckerBoard);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MultiPlay";
@@ -137,9 +153,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox CheckerBoard;
-        private MetroFramework.Controls.MetroButton PlayButton;
+        private MetroFramework.Controls.MetroButton readyButton;
         private MetroFramework.Controls.MetroLabel status;
-        private MetroFramework.Controls.MetroTextBox roomTextBox;
-        private MetroFramework.Controls.MetroButton enterButton;
+        private System.Windows.Forms.RichTextBox ChatDataTextBox;
+        private MetroFramework.Controls.MetroTextBox ChatTextBox;
+        private MetroFramework.Controls.MetroTile ChatTile;
     }
 }
