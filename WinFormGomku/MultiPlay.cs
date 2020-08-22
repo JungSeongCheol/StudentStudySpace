@@ -33,6 +33,11 @@ namespace WinFormGomku
         private bool entered; // 지금 들어와있는지 확인
         private bool threading; // 지금 스레드가 돌아가는지 확인
 
+        public static bool InviteButton = false;
+
+        InviteForm inviteForm = null;
+        private bool InviteOn = false;
+
         public MultiPlay()
         {
             InitializeComponent();
@@ -43,6 +48,8 @@ namespace WinFormGomku
             nowTurn = false;
             tcpClient = LoginForm.tcpClient;
             stream = LoginForm.stream;
+            
+
             if (Status.player == false)
             {
                 readyButton.Visible = false;
@@ -60,6 +67,11 @@ namespace WinFormGomku
                 byte[] buf = Encoding.ASCII.GetBytes("[Observer]");
                 stream.Write(buf, 0, buf.Length);
             }
+        }
+
+        private void InviteUser(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello");
         }
 
         private void CheckerBoard_MouseDown(object sender, MouseEventArgs e)
@@ -266,10 +278,32 @@ namespace WinFormGomku
                         }
                         playing = true;
                     }
+
                     if (message.Contains("[Exit]"))
                     {
                         this.status.Text = "상대방이 나갔습니다.";
                         refresh();
+                    }
+
+                    else if (message.Contains("[Invite]"))
+                    {
+                        string s = message.Split(']')[1];
+                        string[] Users = s.Split(',');
+
+                        if (Users != null)
+                        {
+                            ChatDataTextBox.Invoke((MethodInvoker)delegate ()
+                            {
+                                inviteForm.DgvInvitingUsers.Refresh();
+                            });
+                            foreach (var User in Users)
+                            {
+                                ChatDataTextBox.Invoke((MethodInvoker)delegate ()
+                                {
+                                    inviteForm.DgvInvitingUsers.Rows.Add(User, "초대하기");
+                                });
+                            }
+                        }
                     }
                     /* 상대방이 돌을 둔 경우 (메시지: [Put]{X,Y}) */
                     if (message.Contains("[Put]"))
@@ -381,20 +415,19 @@ namespace WinFormGomku
             }
         }
 
-        private void closeNetwork()
-        {
-            if (threading && WaitingRoom.thread.IsAlive)
-                WaitingRoom.thread.Abort(); // 스레드가 아직 실행중이면 강제종료(끌시 호출되는 메서드므로)
-            if (entered)
-            {
-                tcpClient.Close();
-            }
-        }
+        //private void closeNetwork()
+        //{
+        //    if (threading && WaitingRoom.thread.IsAlive)
+        //        WaitingRoom.thread.Abort(); // 스레드가 아직 실행중이면 강제종료(끌시 호출되는 메서드므로)
+        //    if (entered)
+        //    {
+        //        tcpClient.Close();
+        //    }
+        //}
 
         private void MultiPlay_FormClosed(object sender, FormClosedEventArgs e)
         {
             thread.Abort();
-            
         }
 
         private void childForm_Closed(object sender, FormClosedEventArgs e)
@@ -440,6 +473,23 @@ namespace WinFormGomku
             {
                 ChatTile_Click(sender, e);
             }
+        }
+
+        private void InviteTile_Click(object sender, EventArgs e)
+        {
+            byte[] buf = Encoding.UTF8.GetBytes("[PlayingRoom]Invite");
+            LoginForm.stream.Write(buf, 0, buf.Length);
+            inviteForm = new InviteForm();
+            inviteForm.Show();
+            inviteForm.DgvInvitingUsers.CellDoubleClick += new DataGridViewCellEventHandler(InviteUser_DoubleClick);
+        }
+
+        private void InviteUser_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string s = inviteForm.DgvInvitingUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
+            byte[] buf = Encoding.UTF8.GetBytes("[PlayingRoom]InvUser" + (char)0x01 + Room.currentRoomNum + s);
+            LoginForm.stream.Write(buf, 0, buf.Length);
+            //MetroMessageBox.Show(this, s + "님을 초대하였습니다.", "알림");
         }
     }
 }

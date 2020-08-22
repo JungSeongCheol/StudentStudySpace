@@ -34,6 +34,7 @@
             this.ChatDataTextBox = new System.Windows.Forms.RichTextBox();
             this.ChatTextBox = new MetroFramework.Controls.MetroTextBox();
             this.ChatTile = new MetroFramework.Controls.MetroTile();
+            this.InviteTile = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.CheckerBoard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,11 +128,25 @@
             this.ChatTile.UseSelectable = true;
             this.ChatTile.Click += new System.EventHandler(this.ChatTile_Click);
             // 
+            // InviteTile
+            // 
+            this.InviteTile.ActiveControl = null;
+            this.InviteTile.Location = new System.Drawing.Point(659, 663);
+            this.InviteTile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InviteTile.Name = "InviteTile";
+            this.InviteTile.Size = new System.Drawing.Size(103, 42);
+            this.InviteTile.TabIndex = 5;
+            this.InviteTile.Text = "초대하기";
+            this.InviteTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.InviteTile.UseSelectable = true;
+            this.InviteTile.Click += new System.EventHandler(this.InviteTile_Click);
+            // 
             // MultiPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 750);
+            this.Controls.Add(this.InviteTile);
             this.Controls.Add(this.ChatTile);
             this.Controls.Add(this.ChatTextBox);
             this.Controls.Add(this.ChatDataTextBox);
@@ -158,5 +173,6 @@
         private System.Windows.Forms.RichTextBox ChatDataTextBox;
         private MetroFramework.Controls.MetroTextBox ChatTextBox;
         private MetroFramework.Controls.MetroTile ChatTile;
+        private MetroFramework.Controls.MetroTile InviteTile;
     }
 }

@@ -579,6 +579,61 @@ void ServerThread(Client* client) {
 					}
 					mRoom.unlock();
 				}
+
+				else if (roomTokens[0] == "Invite") {
+					std::string conn = "[Invite]";
+					mClient.lock();
+					for (int i = 0; i < connections.size(); i++) {
+						if (connections[i]->getWhere() == "WaitingRoom") {
+							conn.append(connections[i]->getClientID());
+							conn.append(",");
+						}
+					}
+					conn.erase(conn.end());
+
+					for (int i = 0; i < connections.size(); i++) {
+						send(connections[i]->getClientSocket(), conn.c_str(), conn.length() - 1, 0);
+					}
+					mClient.unlock();
+				}
+
+				else if (roomTokens[0] == "InvUser") {
+				std::string msg = "[InvUser]";
+				//mRoom.lock();
+				//	for (int i = 0; i < rooms.size(); i++) {
+				//		if (std::to_string(rooms[i]->getRoomID()) == roomTokens[1].c_str()) {
+				//			if (rooms[i]->joinRoom(client)) {
+				//				client->setWhere("PlayingRoom");
+				//				client->setRoomID(rooms[i]->getRoomID());
+				//				client->setMyRoom(rooms[i]);
+
+				//				refreshUsers();
+				//				Sleep(10);
+
+				//				if (client->getPlayer() == true) {
+				//					msg += ("success,Player," + std::to_string(rooms[i]->getRoomID()));
+				//				}
+				//				else {
+				//					msg += ("success,Observer," + std::to_string(rooms[i]->getRoomID()));
+				//				}
+				//				send(client->getClientSocket(), msg.c_str(), msg.length(), 0);
+
+				//				Sleep(100);
+				//				send(client->getClientSocket(), " ", 1, 0);
+				//			}
+				//			else {
+				//				msg.append("fail");
+				//				send(client->getClientSocket(), msg.c_str(), msg.length(), 0);
+				//			}
+				//			for (int j = 0; j < ; j++)
+				//			{
+
+				//			}
+				//			break;
+				//		}
+				//	}
+				//mRoom.unlock();
+				}
 			}
 
 			#pragma region 예전(Mysql을 쓰지않았을때의 tcpClient내용)

@@ -130,6 +130,31 @@ namespace WinFormGomku
                     }
                 }
 
+                else if (message.Contains("[InvUser]"))
+                {
+                    string[] s = message.Split(']')[1].Split(',');
+
+                    if (s[0] == "success")
+                    {
+                        if (s[1] == "Player") Status.player = true;
+                        else if (s[1] == "Observer") Status.player = false;
+                        Room.currentRoomNum = int.Parse(s[2]);
+                        BeginInvoke(new Action(() =>
+                        {
+                            thread.Abort();
+                            Hide();
+                            multiPlay = new MultiPlay();
+                            multiPlay.FormClosed += new FormClosedEventHandler(childForm_Closed);
+                            multiPlay.Show();
+                        }));
+
+                    }
+                    else if (s[0] == "fail")
+                    {
+                        MetroMessageBox.Show(this, "접속이 실패했습니다. 다른 방이름으로 해주세요", "Join실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
                 else if (message.Contains("[Refresh]"))
                 {
                     string s = message.Split(']')[1];

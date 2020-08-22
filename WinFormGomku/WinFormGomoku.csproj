@@ -79,6 +79,12 @@
       <DependentUpon>GomkuWinForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Status.cs" />
+    <Compile Include="InviteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteForm.Designer.cs">
+      <DependentUpon>InviteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakingRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="GomkuWinForm.resx">
       <DependentUpon>GomkuWinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteForm.resx">
+      <DependentUpon>InviteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MakingRoom.resx">
       <DependentUpon>MakingRoom.cs</DependentUpon>
