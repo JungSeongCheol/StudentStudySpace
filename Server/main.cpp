@@ -599,7 +599,7 @@ void ServerThread(Client* client) {
 
 				else if (roomTokens[0] == "InvUser") {
 				std::string msg = "[InvUser]";
-				//mRoom.lock();
+				mRoom.lock();
 				//	for (int i = 0; i < rooms.size(); i++) {
 				//		if (std::to_string(rooms[i]->getRoomID()) == roomTokens[1].c_str()) {
 				//			if (rooms[i]->joinRoom(client)) {
@@ -632,7 +632,7 @@ void ServerThread(Client* client) {
 				//			break;
 				//		}
 				//	}
-				//mRoom.unlock();
+				mRoom.unlock();
 				}
 			}
 
