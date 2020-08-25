@@ -91,6 +91,12 @@
     <Compile Include="MakingRoom.Designer.cs">
       <DependentUpon>MakingRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="MultiPlayInvitedRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiPlayInvitedRoomForm.Designer.cs">
+      <DependentUpon>MultiPlayInvitedRoomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MakingRoom.resx">
       <DependentUpon>MakingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiPlayInvitedRoomForm.resx">
+      <DependentUpon>MultiPlayInvitedRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>

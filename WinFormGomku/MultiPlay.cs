@@ -487,7 +487,7 @@ namespace WinFormGomku
         private void InviteUser_DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string s = inviteForm.DgvInvitingUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
-            byte[] buf = Encoding.UTF8.GetBytes("[PlayingRoom]InvUser" + (char)0x01 + Room.currentRoomNum + s);
+            byte[] buf = Encoding.UTF8.GetBytes("[PlayingRoom]InvUser" + (char)0x01 + Room.currentRoomNum + "," + s);
             LoginForm.stream.Write(buf, 0, buf.Length);
             //MetroMessageBox.Show(this, s + "님을 초대하였습니다.", "알림");
         }

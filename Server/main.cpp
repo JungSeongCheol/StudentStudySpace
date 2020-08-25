@@ -598,40 +598,19 @@ void ServerThread(Client* client) {
 				}
 
 				else if (roomTokens[0] == "InvUser") {
-				std::string msg = "[InvUser]";
-				mRoom.lock();
-				//	for (int i = 0; i < rooms.size(); i++) {
-				//		if (std::to_string(rooms[i]->getRoomID()) == roomTokens[1].c_str()) {
-				//			if (rooms[i]->joinRoom(client)) {
-				//				client->setWhere("PlayingRoom");
-				//				client->setRoomID(rooms[i]->getRoomID());
-				//				client->setMyRoom(rooms[i]);
+					std::string msg = "[InvUser]";
+					std::string FullMessage = roomTokens[1].c_str();
+					std::vector<std::string> RoomNumandClient = getTokens(FullMessage, ',');
+					msg += RoomNumandClient[0] + "," + client->getClientID() + "," + client->getMyRoom()->getRoomName();
+					mRoom.lock();
 
-				//				refreshUsers();
-				//				Sleep(10);
-
-				//				if (client->getPlayer() == true) {
-				//					msg += ("success,Player," + std::to_string(rooms[i]->getRoomID()));
-				//				}
-				//				else {
-				//					msg += ("success,Observer," + std::to_string(rooms[i]->getRoomID()));
-				//				}
-				//				send(client->getClientSocket(), msg.c_str(), msg.length(), 0);
-
-				//				Sleep(100);
-				//				send(client->getClientSocket(), " ", 1, 0);
-				//			}
-				//			else {
-				//				msg.append("fail");
-				//				send(client->getClientSocket(), msg.c_str(), msg.length(), 0);
-				//			}
-				//			for (int j = 0; j < ; j++)
-				//			{
-
-				//			}
-				//			break;
-				//		}
-				//	}
+					for (int i = 0; i < connections.size(); i++)
+					{
+						if (connections[i]->getClientID() == RoomNumandClient[1].c_str()) {
+							send(connections[i]->getClientSocket(), msg.c_str(), msg.length(), 0);
+							break;
+						}
+					}
 				mRoom.unlock();
 				}
 			}

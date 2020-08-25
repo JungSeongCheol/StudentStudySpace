@@ -21,9 +21,11 @@ namespace WinFormGomku
         public static Thread thread; // 통신을 위한 쓰레드
         public static string roomNum;
         MultiPlay multiPlay;
+        MultiPlayInvitedRoomForm multiPlayInvitedRoomForm = null;
 
         bool oneCheck = true;
         int DgvroomColum = 0;
+        string InviteRoomNum;
 
         public WaitingRoom()
         {
@@ -133,26 +135,14 @@ namespace WinFormGomku
                 else if (message.Contains("[InvUser]"))
                 {
                     string[] s = message.Split(']')[1].Split(',');
-
-                    if (s[0] == "success")
+                    InviteRoomNum = s[0];
+                    BeginInvoke(new Action(() =>
                     {
-                        if (s[1] == "Player") Status.player = true;
-                        else if (s[1] == "Observer") Status.player = false;
-                        Room.currentRoomNum = int.Parse(s[2]);
-                        BeginInvoke(new Action(() =>
-                        {
-                            thread.Abort();
-                            Hide();
-                            multiPlay = new MultiPlay();
-                            multiPlay.FormClosed += new FormClosedEventHandler(childForm_Closed);
-                            multiPlay.Show();
-                        }));
-
-                    }
-                    else if (s[0] == "fail")
-                    {
-                        MetroMessageBox.Show(this, "접속이 실패했습니다. 다른 방이름으로 해주세요", "Join실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        multiPlayInvitedRoomForm = new MultiPlayInvitedRoomForm();
+                        multiPlayInvitedRoomForm.Show();
+                        multiPlayInvitedRoomForm.InvitedLabel.Text = s[1] + "님이 " + s[2] + " 방으로 초대했습니다.";
+                        multiPlayInvitedRoomForm.OKButton.Click += new EventHandler(OKButton_Click);
+                    }));
                 }
 
                 else if (message.Contains("[Refresh]"))
@@ -219,6 +209,12 @@ namespace WinFormGomku
                     }
                 }
             }
+        }
+
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            byte[] buf = Encoding.ASCII.GetBytes($"[PlayingRoom]Join{(char)0x01}{InviteRoomNum}"); // Join처럼 방번호로 들어가므로
+            LoginForm.stream.Write(buf, 0, buf.Length);
         }
 
         private void MultiPlayForm_Deactivate(object sender, EventArgs e)
