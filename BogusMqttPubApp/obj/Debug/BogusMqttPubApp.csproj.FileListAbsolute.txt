@@ -1,0 +1,14 @@
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\BogusMqttPubApp.exe.config
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\BogusMqttPubApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\BogusMqttPubApp.pdb
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\Bogus.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\M2Mqtt.Net.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\Newtonsoft.Json.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\Bogus.xml
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\M2Mqtt.Net.pdb
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\bin\Debug\Newtonsoft.Json.xml
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\obj\Debug\BogusMqttPubApp.csprojAssemblyReference.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\obj\Debug\BogusMqttPubApp.csproj.CoreCompileInputs.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\obj\Debug\BogusMqttPubApp.csproj.CopyComplete
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\obj\Debug\BogusMqttPubApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttPubApp\obj\Debug\BogusMqttPubApp.pdb

@@ -1,0 +1,12 @@
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\BogusFakeWeatherApp.exe.config
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\BogusFakeWeatherApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\BogusFakeWeatherApp.pdb
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\Bogus.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\Newtonsoft.Json.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\Bogus.xml
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\bin\Debug\Newtonsoft.Json.xml
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\obj\Debug\BogusFakeWeatherApp.csprojAssemblyReference.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\obj\Debug\BogusFakeWeatherApp.csproj.CoreCompileInputs.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\obj\Debug\BogusFakeWeatherApp.csproj.CopyComplete
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\obj\Debug\BogusFakeWeatherApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusFakeWeatherApp\obj\Debug\BogusFakeWeatherApp.pdb

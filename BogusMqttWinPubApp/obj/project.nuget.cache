@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "iw0XyhmztL8Xw02FzmS3DtmEBx+3HkNMx9eEsjvOgINTb0nXPRg0SqF6IlcjOp5jYpf1zQt0lSegsKD+cB2QHw==",
+  "success": true,
+  "projectFilePath": "D:\\PKNU2020\\StudyIoT\\DummyDataGen\\BogusMqttWinPubApp\\BogusMqttWinPubApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JSC\\.nuget\\packages\\bogus\\30.0.4\\bogus.30.0.4.nupkg.sha512",
+    "C:\\Users\\JSC\\.nuget\\packages\\m2mqtt\\4.3.0\\m2mqtt.4.3.0.nupkg.sha512",
+    "C:\\Users\\JSC\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "프로젝트 대상 프레임워크 '.NETCoreApp,Version=v3.1' 대신 '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8'을(를) 사용하여 패키지 'M2Mqtt 4.3.0'을(를) 복원했습니다. 이 패키지는 프로젝트와 완벽하게 호환되지 않을 수 있습니다.",
+      "libraryId": "M2Mqtt",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
