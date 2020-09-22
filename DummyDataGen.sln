@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusMqttWinPublishApp", "BogusMqttWinPublishApp\BogusMqttWinPublishApp.csproj", "{950F43A6-3890-4B20-B086-DFA7A1380935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MqttMonitoringApp", "MqttMonitoringApp\MqttMonitoringApp.csproj", "{7B3DF0DF-DDAA-4DE1-8A5B-63A2D88935F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{950F43A6-3890-4B20-B086-DFA7A1380935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950F43A6-3890-4B20-B086-DFA7A1380935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950F43A6-3890-4B20-B086-DFA7A1380935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950F43A6-3890-4B20-B086-DFA7A1380935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3DF0DF-DDAA-4DE1-8A5B-63A2D88935F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3DF0DF-DDAA-4DE1-8A5B-63A2D88935F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3DF0DF-DDAA-4DE1-8A5B-63A2D88935F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3DF0DF-DDAA-4DE1-8A5B-63A2D88935F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {826DCF00-1390-4B0C-A2E1-2578628C647C}
+	EndGlobalSection
+EndGlobal
