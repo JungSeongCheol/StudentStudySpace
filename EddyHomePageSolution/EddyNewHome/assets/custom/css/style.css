@@ -758,7 +758,7 @@ button, input,
     color: #a7a7a7; }
     #top-navigation .ident .vc-photo {
       min-height: 360px;
-      background: url("/assets/custom/images/door.jpg");
+      background: url("../images/JungSeongCheol.jpg");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
