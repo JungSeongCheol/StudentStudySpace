@@ -1,0 +1,15 @@
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\bin\Debug\netcoreapp3.1\BackgroundWorkerCore.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\bin\Debug\netcoreapp3.1\BackgroundWorkerCore.deps.json
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\bin\Debug\netcoreapp3.1\BackgroundWorkerCore.runtimeconfig.json
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\bin\Debug\netcoreapp3.1\BackgroundWorkerCore.runtimeconfig.dev.json
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\bin\Debug\netcoreapp3.1\BackgroundWorkerCore.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\bin\Debug\netcoreapp3.1\BackgroundWorkerCore.pdb
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.csprojAssemblyReference.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.Form1.resources
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.csproj.GenerateResource.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.AssemblyInfoInputs.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.AssemblyInfo.cs
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.csproj.CoreCompileInputs.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.pdb
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerCore\obj\Debug\netcoreapp3.1\BackgroundWorkerCore.genruntimeconfig.cache

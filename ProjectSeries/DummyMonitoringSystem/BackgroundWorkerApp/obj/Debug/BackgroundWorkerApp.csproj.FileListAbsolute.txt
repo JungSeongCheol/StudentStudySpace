@@ -1,0 +1,10 @@
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\bin\Debug\BackgroundWorkerApp.exe.config
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\bin\Debug\BackgroundWorkerApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\bin\Debug\BackgroundWorkerApp.pdb
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.csprojAssemblyReference.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.Form1.resources
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.Properties.Resources.resources
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.csproj.GenerateResource.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.csproj.CoreCompileInputs.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BackgroundWorkerApp\obj\Debug\BackgroundWorkerApp.pdb

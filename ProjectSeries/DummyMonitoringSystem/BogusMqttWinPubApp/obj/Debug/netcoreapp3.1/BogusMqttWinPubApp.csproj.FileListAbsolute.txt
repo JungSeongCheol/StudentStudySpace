@@ -1,0 +1,9 @@
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\bin\Debug\netcoreapp3.1\BogusMqttWinPubApp.exe
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\obj\Debug\netcoreapp3.1\BogusMqttWinPubApp.csprojAssemblyReference.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\obj\Debug\netcoreapp3.1\BogusMqttWinPubApp.Form1.resources
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\obj\Debug\netcoreapp3.1\BogusMqttWinPubApp.csproj.GenerateResource.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\obj\Debug\netcoreapp3.1\BogusMqttWinPubApp.AssemblyInfoInputs.cache
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\obj\Debug\netcoreapp3.1\BogusMqttWinPubApp.AssemblyInfo.cs
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\bin\Debug\netcoreapp3.1\Bogus.dll
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\obj\Debug\netcoreapp3.1\BogusMqttWinPubApp.csproj.CopyComplete
+D:\PKNU2020\StudyIoT\DummyDataGen\BogusMqttWinPubApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
