@@ -1,0 +1,577 @@
+
+App1_Switch_LED.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  0000039e  00000432  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000039e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800102  00800102  00000434  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000434  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000464  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000060  00000000  00000000  000004a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000096d  00000000  00000000  00000504  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000080f  00000000  00000000  00000e71  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000482  00000000  00000000  00001680  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000188  00000000  00000000  00001b04  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000047c  00000000  00000000  00001c8c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000002d7  00000000  00000000  00002108  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000050  00000000  00000000  000023df  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+   2:	00 00       	nop
+   4:	84 c0       	rjmp	.+264    	; 0x10e <__vector_1>
+   6:	00 00       	nop
+   8:	97 c0       	rjmp	.+302    	; 0x138 <__vector_2>
+   a:	00 00       	nop
+   c:	c1 c0       	rjmp	.+386    	; 0x190 <__vector_3>
+   e:	00 00       	nop
+  10:	ec c0       	rjmp	.+472    	; 0x1ea <__vector_4>
+  12:	00 00       	nop
+  14:	17 c1       	rjmp	.+558    	; 0x244 <__vector_5>
+  16:	00 00       	nop
+  18:	45 c1       	rjmp	.+650    	; 0x2a4 <__vector_6>
+  1a:	00 00       	nop
+  1c:	74 c1       	rjmp	.+744    	; 0x306 <__vector_7>
+  1e:	00 00       	nop
+  20:	a3 c1       	rjmp	.+838    	; 0x368 <__vector_8>
+  22:	00 00       	nop
+  24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	44 c0       	rjmp	.+136    	; 0xc6 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	3e c0       	rjmp	.+124    	; 0xc6 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	30 c0       	rjmp	.+96     	; 0xc6 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	26 c0       	rjmp	.+76     	; 0xc6 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ee e9       	ldi	r30, 0x9E	; 158
+  a0:	f3 e0       	ldi	r31, 0x03	; 3
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a2 30       	cpi	r26, 0x02	; 2
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	a2 e0       	ldi	r26, 0x02	; 2
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a4 30       	cpi	r26, 0x04	; 4
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	02 d0       	rcall	.+4      	; 0xc8 <main>
+  c4:	6a c1       	rjmp	.+724    	; 0x39a <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+
+000000c8 <main>:
+volatile int Light = 0;
+volatile unsigned char Light_flag = 1;
+
+int main(void)
+{
+	DDRB = 0x80;
+  c8:	80 e8       	ldi	r24, 0x80	; 128
+  ca:	87 bb       	out	0x17, r24	; 23
+
+	DDRE = 0x00;
+  cc:	12 b8       	out	0x02, r1	; 2
+	DDRD = 0x00;
+  ce:	11 ba       	out	0x11, r1	; 17
+
+	TCCR2 = 0x62; // PWM 모드 010 8분주
+  d0:	82 e6       	ldi	r24, 0x62	; 98
+  d2:	85 bd       	out	0x25, r24	; 37
+	TCNT2 = 0x00;
+  d4:	14 bc       	out	0x24, r1	; 36
+
+	EICRA = 0xff;
+  d6:	8f ef       	ldi	r24, 0xFF	; 255
+  d8:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <__TEXT_REGION_LENGTH__+0x7e006a>
+	EICRB = 0xff;
+  dc:	8a bf       	out	0x3a, r24	; 58
+
+	EIMSK = 0xff;
+  de:	89 bf       	out	0x39, r24	; 57
+	EIFR = 0xff;
+  e0:	88 bf       	out	0x38, r24	; 56
+
+	sei();
+  e2:	78 94       	sei
+
+    while (1) 
+    {
+		if (Light_flag)
+  e4:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  e8:	88 23       	and	r24, r24
+  ea:	e1 f3       	breq	.-8      	; 0xe4 <main+0x1c>
+		{
+			OCR2 = Light;
+  ec:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+  f0:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+  f4:	83 bd       	out	0x23, r24	; 35
+			Light_flag = 0;
+  f6:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  fa:	2f ef       	ldi	r18, 0xFF	; 255
+  fc:	8f e3       	ldi	r24, 0x3F	; 63
+  fe:	92 e0       	ldi	r25, 0x02	; 2
+ 100:	21 50       	subi	r18, 0x01	; 1
+ 102:	80 40       	sbci	r24, 0x00	; 0
+ 104:	90 40       	sbci	r25, 0x00	; 0
+ 106:	e1 f7       	brne	.-8      	; 0x100 <main+0x38>
+ 108:	00 c0       	rjmp	.+0      	; 0x10a <main+0x42>
+ 10a:	00 00       	nop
+ 10c:	eb cf       	rjmp	.-42     	; 0xe4 <main+0x1c>
+
+0000010e <__vector_1>:
+			_delay_ms(100);
+		}
+    }
+}
+
+SIGNAL(INT0_vect){
+ 10e:	1f 92       	push	r1
+ 110:	0f 92       	push	r0
+ 112:	0f b6       	in	r0, 0x3f	; 63
+ 114:	0f 92       	push	r0
+ 116:	11 24       	eor	r1, r1
+ 118:	8f 93       	push	r24
+	cli();
+ 11a:	f8 94       	cli
+	Light = 0;
+ 11c:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <__data_end+0x1>
+ 120:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 124:	81 e0       	ldi	r24, 0x01	; 1
+ 126:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	sei();
+ 12a:	78 94       	sei
+}
+ 12c:	8f 91       	pop	r24
+ 12e:	0f 90       	pop	r0
+ 130:	0f be       	out	0x3f, r0	; 63
+ 132:	0f 90       	pop	r0
+ 134:	1f 90       	pop	r1
+ 136:	18 95       	reti
+
+00000138 <__vector_2>:
+
+SIGNAL(INT1_vect){
+ 138:	1f 92       	push	r1
+ 13a:	0f 92       	push	r0
+ 13c:	0f b6       	in	r0, 0x3f	; 63
+ 13e:	0f 92       	push	r0
+ 140:	11 24       	eor	r1, r1
+ 142:	2f 93       	push	r18
+ 144:	3f 93       	push	r19
+ 146:	8f 93       	push	r24
+ 148:	9f 93       	push	r25
+	cli();
+ 14a:	f8 94       	cli
+	Light -= 61;
+ 14c:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 150:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+ 154:	cd 97       	sbiw	r24, 0x3d	; 61
+ 156:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 15a:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 15e:	81 e0       	ldi	r24, 0x01	; 1
+ 160:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	if(Light < 0){
+ 164:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
+ 168:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
+ 16c:	37 ff       	sbrs	r19, 7
+ 16e:	06 c0       	rjmp	.+12     	; 0x17c <__vector_2+0x44>
+		Light = 0;
+ 170:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <__data_end+0x1>
+ 174:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+		Light_flag = 1;
+ 178:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	}
+	sei();
+ 17c:	78 94       	sei
+}
+ 17e:	9f 91       	pop	r25
+ 180:	8f 91       	pop	r24
+ 182:	3f 91       	pop	r19
+ 184:	2f 91       	pop	r18
+ 186:	0f 90       	pop	r0
+ 188:	0f be       	out	0x3f, r0	; 63
+ 18a:	0f 90       	pop	r0
+ 18c:	1f 90       	pop	r1
+ 18e:	18 95       	reti
+
+00000190 <__vector_3>:
+
+SIGNAL(INT2_vect){
+ 190:	1f 92       	push	r1
+ 192:	0f 92       	push	r0
+ 194:	0f b6       	in	r0, 0x3f	; 63
+ 196:	0f 92       	push	r0
+ 198:	11 24       	eor	r1, r1
+ 19a:	2f 93       	push	r18
+ 19c:	3f 93       	push	r19
+ 19e:	8f 93       	push	r24
+ 1a0:	9f 93       	push	r25
+	cli();
+ 1a2:	f8 94       	cli
+	Light -= 111;
+ 1a4:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 1a8:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+ 1ac:	8f 56       	subi	r24, 0x6F	; 111
+ 1ae:	91 09       	sbc	r25, r1
+ 1b0:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 1b4:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 1b8:	81 e0       	ldi	r24, 0x01	; 1
+ 1ba:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	if(Light < 0){
+ 1be:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
+ 1c2:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
+ 1c6:	37 ff       	sbrs	r19, 7
+ 1c8:	06 c0       	rjmp	.+12     	; 0x1d6 <__vector_3+0x46>
+		Light = 0;
+ 1ca:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <__data_end+0x1>
+ 1ce:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+		Light_flag = 1;
+ 1d2:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	}
+	sei();
+ 1d6:	78 94       	sei
+}
+ 1d8:	9f 91       	pop	r25
+ 1da:	8f 91       	pop	r24
+ 1dc:	3f 91       	pop	r19
+ 1de:	2f 91       	pop	r18
+ 1e0:	0f 90       	pop	r0
+ 1e2:	0f be       	out	0x3f, r0	; 63
+ 1e4:	0f 90       	pop	r0
+ 1e6:	1f 90       	pop	r1
+ 1e8:	18 95       	reti
+
+000001ea <__vector_4>:
+SIGNAL(INT3_vect){
+ 1ea:	1f 92       	push	r1
+ 1ec:	0f 92       	push	r0
+ 1ee:	0f b6       	in	r0, 0x3f	; 63
+ 1f0:	0f 92       	push	r0
+ 1f2:	11 24       	eor	r1, r1
+ 1f4:	2f 93       	push	r18
+ 1f6:	3f 93       	push	r19
+ 1f8:	8f 93       	push	r24
+ 1fa:	9f 93       	push	r25
+	cli();
+ 1fc:	f8 94       	cli
+	Light -= 161;
+ 1fe:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 202:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+ 206:	81 5a       	subi	r24, 0xA1	; 161
+ 208:	91 09       	sbc	r25, r1
+ 20a:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 20e:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 212:	81 e0       	ldi	r24, 0x01	; 1
+ 214:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	if(Light < 0){
+ 218:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
+ 21c:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
+ 220:	37 ff       	sbrs	r19, 7
+ 222:	06 c0       	rjmp	.+12     	; 0x230 <__vector_4+0x46>
+		Light = 0;
+ 224:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <__data_end+0x1>
+ 228:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+		Light_flag = 1;
+ 22c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	}
+	sei();
+ 230:	78 94       	sei
+}
+ 232:	9f 91       	pop	r25
+ 234:	8f 91       	pop	r24
+ 236:	3f 91       	pop	r19
+ 238:	2f 91       	pop	r18
+ 23a:	0f 90       	pop	r0
+ 23c:	0f be       	out	0x3f, r0	; 63
+ 23e:	0f 90       	pop	r0
+ 240:	1f 90       	pop	r1
+ 242:	18 95       	reti
+
+00000244 <__vector_5>:
+
+SIGNAL(INT4_vect){
+ 244:	1f 92       	push	r1
+ 246:	0f 92       	push	r0
+ 248:	0f b6       	in	r0, 0x3f	; 63
+ 24a:	0f 92       	push	r0
+ 24c:	11 24       	eor	r1, r1
+ 24e:	2f 93       	push	r18
+ 250:	3f 93       	push	r19
+ 252:	8f 93       	push	r24
+ 254:	9f 93       	push	r25
+	cli();
+ 256:	f8 94       	cli
+	Light += 61;
+ 258:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 25c:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+ 260:	cd 96       	adiw	r24, 0x3d	; 61
+ 262:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 266:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 26a:	81 e0       	ldi	r24, 0x01	; 1
+ 26c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	if(Light > 255){
+ 270:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
+ 274:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
+ 278:	2f 3f       	cpi	r18, 0xFF	; 255
+ 27a:	31 05       	cpc	r19, r1
+ 27c:	49 f0       	breq	.+18     	; 0x290 <__vector_5+0x4c>
+ 27e:	44 f0       	brlt	.+16     	; 0x290 <__vector_5+0x4c>
+		Light = 255;
+ 280:	2f ef       	ldi	r18, 0xFF	; 255
+ 282:	30 e0       	ldi	r19, 0x00	; 0
+ 284:	30 93 03 01 	sts	0x0103, r19	; 0x800103 <__data_end+0x1>
+ 288:	20 93 02 01 	sts	0x0102, r18	; 0x800102 <__data_end>
+		Light_flag = 1;
+ 28c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	}
+	sei();
+ 290:	78 94       	sei
+}
+ 292:	9f 91       	pop	r25
+ 294:	8f 91       	pop	r24
+ 296:	3f 91       	pop	r19
+ 298:	2f 91       	pop	r18
+ 29a:	0f 90       	pop	r0
+ 29c:	0f be       	out	0x3f, r0	; 63
+ 29e:	0f 90       	pop	r0
+ 2a0:	1f 90       	pop	r1
+ 2a2:	18 95       	reti
+
+000002a4 <__vector_6>:
+
+SIGNAL(INT5_vect){
+ 2a4:	1f 92       	push	r1
+ 2a6:	0f 92       	push	r0
+ 2a8:	0f b6       	in	r0, 0x3f	; 63
+ 2aa:	0f 92       	push	r0
+ 2ac:	11 24       	eor	r1, r1
+ 2ae:	2f 93       	push	r18
+ 2b0:	3f 93       	push	r19
+ 2b2:	8f 93       	push	r24
+ 2b4:	9f 93       	push	r25
+	cli();
+ 2b6:	f8 94       	cli
+	Light += 111;
+ 2b8:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 2bc:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+ 2c0:	81 59       	subi	r24, 0x91	; 145
+ 2c2:	9f 4f       	sbci	r25, 0xFF	; 255
+ 2c4:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 2c8:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 2cc:	81 e0       	ldi	r24, 0x01	; 1
+ 2ce:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	if(Light > 255){
+ 2d2:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
+ 2d6:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
+ 2da:	2f 3f       	cpi	r18, 0xFF	; 255
+ 2dc:	31 05       	cpc	r19, r1
+ 2de:	49 f0       	breq	.+18     	; 0x2f2 <__vector_6+0x4e>
+ 2e0:	44 f0       	brlt	.+16     	; 0x2f2 <__vector_6+0x4e>
+		Light = 255;
+ 2e2:	2f ef       	ldi	r18, 0xFF	; 255
+ 2e4:	30 e0       	ldi	r19, 0x00	; 0
+ 2e6:	30 93 03 01 	sts	0x0103, r19	; 0x800103 <__data_end+0x1>
+ 2ea:	20 93 02 01 	sts	0x0102, r18	; 0x800102 <__data_end>
+		Light_flag = 1;
+ 2ee:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	}
+	sei();
+ 2f2:	78 94       	sei
+}
+ 2f4:	9f 91       	pop	r25
+ 2f6:	8f 91       	pop	r24
+ 2f8:	3f 91       	pop	r19
+ 2fa:	2f 91       	pop	r18
+ 2fc:	0f 90       	pop	r0
+ 2fe:	0f be       	out	0x3f, r0	; 63
+ 300:	0f 90       	pop	r0
+ 302:	1f 90       	pop	r1
+ 304:	18 95       	reti
+
+00000306 <__vector_7>:
+
+SIGNAL(INT6_vect){
+ 306:	1f 92       	push	r1
+ 308:	0f 92       	push	r0
+ 30a:	0f b6       	in	r0, 0x3f	; 63
+ 30c:	0f 92       	push	r0
+ 30e:	11 24       	eor	r1, r1
+ 310:	2f 93       	push	r18
+ 312:	3f 93       	push	r19
+ 314:	8f 93       	push	r24
+ 316:	9f 93       	push	r25
+	cli();
+ 318:	f8 94       	cli
+	Light += 161;
+ 31a:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 31e:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
+ 322:	8f 55       	subi	r24, 0x5F	; 95
+ 324:	9f 4f       	sbci	r25, 0xFF	; 255
+ 326:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 32a:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 32e:	81 e0       	ldi	r24, 0x01	; 1
+ 330:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	if(Light > 255){
+ 334:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
+ 338:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
+ 33c:	2f 3f       	cpi	r18, 0xFF	; 255
+ 33e:	31 05       	cpc	r19, r1
+ 340:	49 f0       	breq	.+18     	; 0x354 <__vector_7+0x4e>
+ 342:	44 f0       	brlt	.+16     	; 0x354 <__vector_7+0x4e>
+		Light = 255;
+ 344:	2f ef       	ldi	r18, 0xFF	; 255
+ 346:	30 e0       	ldi	r19, 0x00	; 0
+ 348:	30 93 03 01 	sts	0x0103, r19	; 0x800103 <__data_end+0x1>
+ 34c:	20 93 02 01 	sts	0x0102, r18	; 0x800102 <__data_end>
+		Light_flag = 1;
+ 350:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	}
+	sei();
+ 354:	78 94       	sei
+}
+ 356:	9f 91       	pop	r25
+ 358:	8f 91       	pop	r24
+ 35a:	3f 91       	pop	r19
+ 35c:	2f 91       	pop	r18
+ 35e:	0f 90       	pop	r0
+ 360:	0f be       	out	0x3f, r0	; 63
+ 362:	0f 90       	pop	r0
+ 364:	1f 90       	pop	r1
+ 366:	18 95       	reti
+
+00000368 <__vector_8>:
+
+SIGNAL(INT7_vect){
+ 368:	1f 92       	push	r1
+ 36a:	0f 92       	push	r0
+ 36c:	0f b6       	in	r0, 0x3f	; 63
+ 36e:	0f 92       	push	r0
+ 370:	11 24       	eor	r1, r1
+ 372:	8f 93       	push	r24
+ 374:	9f 93       	push	r25
+	cli();
+ 376:	f8 94       	cli
+	Light = 255;
+ 378:	8f ef       	ldi	r24, 0xFF	; 255
+ 37a:	90 e0       	ldi	r25, 0x00	; 0
+ 37c:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 380:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+	Light_flag = 1;
+ 384:	81 e0       	ldi	r24, 0x01	; 1
+ 386:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+	sei();
+ 38a:	78 94       	sei
+}
+ 38c:	9f 91       	pop	r25
+ 38e:	8f 91       	pop	r24
+ 390:	0f 90       	pop	r0
+ 392:	0f be       	out	0x3f, r0	; 63
+ 394:	0f 90       	pop	r0
+ 396:	1f 90       	pop	r1
+ 398:	18 95       	reti
+
+0000039a <_exit>:
+ 39a:	f8 94       	cli
+
+0000039c <__stop_program>:
+ 39c:	ff cf       	rjmp	.-2      	; 0x39c <__stop_program>
