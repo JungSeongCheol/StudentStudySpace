@@ -1,0 +1,15 @@
+"D:\DEV\IAR Systems\Embedded Workbench 8.4\arm\bin\armproc.dll" 
+
+"D:\DEV\IAR Systems\Embedded Workbench 8.4\arm\bin\armstlink2.dll" 
+
+"D:\PKNU2020\StudyCortex\I2C\I2C_Temp_LCD\EWARM\I2C_Temp_LCD\Exe\I2C_Temp_LCD.out" 
+
+--plugin="D:\DEV\IAR Systems\Embedded Workbench 8.4\arm\bin\armbat.dll" 
+
+--device_macro="D:\DEV\IAR Systems\Embedded Workbench 8.4\arm\config\debugger\ST\STM32F4xx.dmac" 
+
+--flash_loader="D:\DEV\IAR Systems\Embedded Workbench 8.4\arm\config\flashloader\ST\FlashSTM32F4xxx.board" 
+
+
+
+
