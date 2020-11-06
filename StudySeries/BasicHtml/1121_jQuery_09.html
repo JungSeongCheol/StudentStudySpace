@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>jQuery Example</title>
+        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $("#box").css({
+                    width: 100,
+                    height: 100,
+                    backgroundColor: "red"
+                }).animate({
+                    width: 300,
+                    opacity: 0.8
+                }, 500);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
+</html>

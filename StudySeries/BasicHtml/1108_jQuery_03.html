@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>jQuery Example</title>
+        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            
+            $(document).ready(function() {
+                // 첫번째 방식
+                // var box = $(".box");
+                // box.css("float", "left").css("margin", 10);
+                // box.css("background-color", "blue");
+                // box.css("width", 100).css("height", 100);
+
+                // 02. 두번째 방식
+                $(".box").css({
+                    float: "left",
+                    margin: 10,
+                    width: 100,
+                    height: 100,
+                    backgroundColor: "red"
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <button class="box"></div>
+    </body>
+</html>

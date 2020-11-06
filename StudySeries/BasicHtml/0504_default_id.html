@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Samples</title>
+        <style>
+            body{
+                background-image: url("image/space.jpg");
+                background-size: 100%;
+                opacity: 0.5;
+            }
+
+            a{
+                text-decoration: none;
+                color: black;
+            }
+
+            a:hover{
+                color: red;
+            }
+
+            nav ul{
+                padding-top: 10px;
+            }
+
+            nav ul li{
+                display: inline;
+                border-left: 1px solid #999;
+                font: bold 12px Dotum;
+                padding: 0 10px
+            }
+
+            nav ul li:first-child {border-left: none;}
+
+            #custom_hd {
+                width : 800px;
+                margin : 0 auto;
+                background-color: red;
+                color: white;
+            }
+
+            #custom_nv{
+                width : 800px;
+                margin : 0 auto;
+                overflow : hidden;
+            }
+
+            #warp{
+                width: 1000px;
+                float: right;
+                background-color: blue;
+                overflow: hidden;
+            }
+
+            #custom_content{
+                width: 700px;
+                float: right;
+                background-color: lightseagreen;
+            }
+
+            #custom_aside{
+                width: 300px;
+                float: left;
+                background-color: lawngreen;
+            }
+
+            .item{
+                color: violet;
+            }
+
+            .second_footer{
+                background-color: beige;
+                border: solid 3px #000000;
+            }
+
+            #custom_content > article > h1:hover{
+                color: green;
+            }
+
+            #custom_content > article > h1:active{
+                color: blue;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <header id="custom_hd">
+            <h1>HTML5 기본</h1>
+        </header>
+    </body>
+    <nav id="custom_nv">
+        <ul>
+            <li><a href="test01.html" id="custom_nv">메뉴 - 1</a></li>
+            <li><a href="test02.html">메뉴 - 2</a></li>
+            <li><a href="test03.html">메뉴 - 3</a></li>
+        </ul>
+    </nav>
+    <section id="custom_content" >
+        <article id="custon_aside">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+        <article >
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+    </section>
+
+    <footer id="custom_footer">
+        <address class="item second_footer">부산광역시 남구 용당동</address>
+    </footer>
+</html>

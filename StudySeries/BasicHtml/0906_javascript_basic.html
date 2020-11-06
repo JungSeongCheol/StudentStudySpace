@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>javascript example</title>
+        <script>
+            // 01 변수 초기화
+            // var pi = 3.141592;
+            // var radius = 10;
+            // //출력
+            // alert("결과는 " + (2*pi*radius));
+
+            // 02 변수 사용 
+            // var date = new Date();
+
+            // var year = date.getFullYear();
+            // var month = date.getMonth() + 1;
+            // var day = date.getDay();
+            // var hours = date.getHours();
+            // var min = date.getMinutes();
+            // var sec = date.getSeconds();
+            // var ms = date.getMillseconds();
+
+            // if(hours < 12){
+            //     alert("오전입니다.");
+            // }
+
+            // 03 배열 사용
+            // var array = [273, "문자열", true, function() {var i = 10;}, {}, [1, 3]];
+            // alert(array[5][1]);
+
+            // 04 반복문
+            // var output = 0;
+            // for (let index=0; index<=100; index++){
+            //     output += index;
+            // }
+
+            // alert(output);
+
+            // 05 함수- 익명함수
+            // var func = function (){
+            //     alert("함수_01");
+            //     alert("함수_02");
+            // };
+            
+            // alert(typeof (func) + " : " + func); // func 의 타입 (function) + : + func의 내용(function () { ~~~})
+            // func(); // func이 실행됨 (alert("함수_01")실행, 그후 alert("함수_02") 실행됨)
+
+            // 06 함수- 일반함수
+            // var result = 0;
+            // function func(x){
+            //     return x * x * x;
+            // }
+
+            // result = func(8);
+            // alert(result);
+
+            // 07. 콜백함수
+            function callTenTimes(fncPram){
+                for(var i=0; i<10 ; i++){
+                    fncPram();
+                }
+            }
+
+            // var fnc = function () {
+            //     alert('함수 호출');
+            // };
+
+            // callTenTimes(fnc);
+
+            callTenTimes(function (){
+                alert('함수 호출');
+            });
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head lang="kor">
+        <meta charset="utf-8"/>
+        <title>Document Example</title>
+        <script>
+            window.onload = function (){
+                // 01. setAttribute
+                // var image = document.getElementById("image");
+                // image.setAttribute("width", "800");
+                // image.setAttribute("height", "600");
+                // image.src = "http://placehold.it/800X600"
+
+                // // image.setAttribute("width", "200");
+
+                // document.body.setAttribute("data-custom", "HelloJS");
+                // var dataCustom = document.body.getAttribute("data-custom");
+                // // alert(dataCustom);
+
+                // 02. Timer
+                var clock = document.getElementById("clock");
+
+                setInterval(function () {
+                    var now = new Date();
+                    clock.innerHTML = now.toString();
+                }, 1000);
+            }
+        </script>
+    </head>
+    <body>
+        <!-- <img id="image"/> -->
+        <h1 id="clock"></h1>
+    </body>
+</html>

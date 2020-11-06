@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head lang="ko">
+        <meta charset="utf-8"/>
+        <title>이벤트 예제</title>
+        <script>
+            window.onload = function() {
+                var button = document.getElementById("button1");
+                
+                button.onclick = function() {
+                    alert("익명함수콜");
+                }
+
+                var link = document.getElementById("link");
+                link.onclick = function() {
+                    return true;
+                }
+            }
+            function buttonClick() {
+                alert("20200007 changed!!");
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="button" value="입력" onclick="buttonClick()"/>
+        <button onclick="alert('클릭2')">입력2</button>
+        <input type="button" id="button1" value="입력3"/>
+        <a href="https://naver.com" id="link">
+            네이버
+        </a>
+    </body>
+</html>
