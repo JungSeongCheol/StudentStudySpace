@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83F4F3EB-147D-4961-82D4-79E7849D4CBE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinFormGomku</RootNamespace>
+    <AssemblyName>WinFormGomku</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>packages\ControlzEx.4.3.2\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>packages\MahApps.Metro.2.2.0\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GomkuWinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GomkuWinForm.Designer.cs">
+      <DependentUpon>GomkuWinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Status.cs" />
+    <Compile Include="InviteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteForm.Designer.cs">
+      <DependentUpon>InviteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakingRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakingRoom.Designer.cs">
+      <DependentUpon>MakingRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiPlayInvitedRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiPlayInvitedRoomForm.Designer.cs">
+      <DependentUpon>MultiPlayInvitedRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiPlay.Designer.cs">
+      <DependentUpon>MultiPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsAIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsAIForm.Designer.cs">
+      <DependentUpon>VsAIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinglePlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SinglePlay.Designer.cs">
+      <DependentUpon>SinglePlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingRoom.Designer.cs">
+      <DependentUpon>WaitingRoom.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GomkuWinForm.resx">
+      <DependentUpon>GomkuWinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteForm.resx">
+      <DependentUpon>InviteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakingRoom.resx">
+      <DependentUpon>MakingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiPlayInvitedRoomForm.resx">
+      <DependentUpon>MultiPlayInvitedRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiPlay.resx">
+      <DependentUpon>MultiPlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsAIForm.resx">
+      <DependentUpon>VsAIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SinglePlay.resx">
+      <DependentUpon>SinglePlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitingRoom.resx">
+      <DependentUpon>WaitingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Solo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
