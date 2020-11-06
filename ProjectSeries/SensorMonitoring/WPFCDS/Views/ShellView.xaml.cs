@@ -1,0 +1,18 @@
+﻿using MahApps.Metro.Controls;
+using WPFCDS.ViewModels;
+
+namespace WPFCDS.Views
+{
+    /// <summary>
+    /// WPFCDS.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class ShellView : MetroWindow
+    {
+        public ShellView()
+        {
+            InitializeComponent();
+            this.DataContext = new ShellViewModel();
+            
+        }
+    }
+}
